@@ -12,8 +12,11 @@ from __future__ import annotations
 import json
 import os
 import shutil
+import time
 from collections import Counter
 from pathlib import Path
+
+import db
 
 BUNDLED_DATA_DIR = Path(__file__).resolve().parent / "data"
 # With CAARYA_DATA_DIR set, editable data lives on that volume instead of next to the code.
@@ -275,11 +278,33 @@ _schema: dict | None = None
 _institutions: dict | None = None
 
 
-def load_taxonomy(force: bool = False) -> Taxonomy:
-    global _taxonomy
+_taxonomy_fetched_at = 0.0
+DB_RELOAD_SECONDS = 5   # in Postgres mode, `force` re-reads at most this often unless fresh=True
+
+
+def read_taxonomy_text() -> str:
+    """The taxonomy JSON from wherever it lives: Postgres if configured, else the file.
+
+    The first Postgres boot seeds the table from the bundled file; after that the
+    database copy is the source of truth and admin edits survive redeploys.
+    """
+    if db.use_postgres():
+        body = db.get_document("taxonomy.json")
+        if body is None:
+            db.put_document("taxonomy.json", (BUNDLED_DATA_DIR / "taxonomy.json").read_text(encoding="utf-8"),
+                            only_if_missing=True)
+            body = db.get_document("taxonomy.json")
+        return body
+    return TAXONOMY_PATH.read_text(encoding="utf-8")
+
+
+def load_taxonomy(force: bool = False, fresh: bool = False) -> Taxonomy:
+    global _taxonomy, _taxonomy_fetched_at
+    if _taxonomy is not None and force and db.use_postgres() and not fresh:
+        force = time.monotonic() - _taxonomy_fetched_at > DB_RELOAD_SECONDS
     if _taxonomy is None or force:
-        with open(TAXONOMY_PATH, encoding="utf-8") as handle:
-            _taxonomy = Taxonomy(json.load(handle))
+        _taxonomy = Taxonomy(json.loads(read_taxonomy_text()))
+        _taxonomy_fetched_at = time.monotonic()
     return _taxonomy
 
 

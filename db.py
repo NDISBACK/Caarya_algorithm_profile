@@ -120,7 +120,73 @@ def flatten_experience(payload: dict) -> dict[str, list]:
     return out
 
 
-def connect(path: Path | str = DB_PATH) -> sqlite3.Connection:
+
+# ---------------------------------------------------------------- Postgres (Neon)
+# Set DATABASE_URL to use Postgres; leave it unset for the local SQLite file. Both
+# run the same SQL - the wrapper below only rewrites `?` placeholders and returns
+# new ids via RETURNING, so the query code stays single-sourced.
+
+PG_SCHEMA = (
+    SCHEMA.replace("INTEGER PRIMARY KEY AUTOINCREMENT", "SERIAL PRIMARY KEY")
+          .replace(" REAL,", " DOUBLE PRECISION,")
+    + """
+CREATE TABLE IF NOT EXISTS documents (
+    name       TEXT PRIMARY KEY,
+    body       TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS taxonomy_backups (
+    id         SERIAL PRIMARY KEY,
+    created_at TEXT NOT NULL,
+    label      TEXT NOT NULL DEFAULT '',
+    body       TEXT NOT NULL
+);
+"""
+)
+
+
+def use_postgres() -> bool:
+    return bool(os.environ.get("DATABASE_URL"))
+
+
+class _PgConn:
+    """The slice of the sqlite3 connection API this module uses, over psycopg."""
+
+    def __init__(self, url: str):
+        import psycopg
+        from psycopg.rows import dict_row
+        self._conn = psycopg.connect(url, row_factory=dict_row)
+
+    def execute(self, sql: str, params=None):
+        if params:
+            return self._conn.execute(sql.replace("?", "%s"), params)
+        return self._conn.execute(sql)
+
+    def executescript(self, sql: str) -> None:
+        self._conn.execute(sql)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, *_):
+        try:
+            if exc_type is None:
+                self._conn.commit()
+            else:
+                self._conn.rollback()
+        finally:
+            self._conn.close()
+
+
+def _insert(conn, sql: str, params) -> int:
+    """Run an INSERT and return the new row's id on either backend."""
+    if isinstance(conn, _PgConn):
+        return conn.execute(sql + " RETURNING id", params).fetchone()["id"]
+    return conn.execute(sql, params).lastrowid
+
+
+def connect(path: Path | str | None = None) -> sqlite3.Connection:
     """Open the database, creating the schema if it isn't there.
 
     sqlite3.connect happily creates an empty file when the database is missing,
@@ -128,6 +194,9 @@ def connect(path: Path | str = DB_PATH) -> sqlite3.Connection:
     right up until the first query fails with "no such table". Checking here
     means the app heals itself instead of serving 500s.
     """
+    if path is None and use_postgres():
+        return _PgConn(os.environ["DATABASE_URL"])
+    path = path or DB_PATH
     conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
@@ -145,11 +214,11 @@ def connect(path: Path | str = DB_PATH) -> sqlite3.Connection:
     return conn
 
 
-def init_db(path: Path | str = DB_PATH) -> None:
+def init_db(path: Path | str | None = None) -> None:
     """Explicit setup at startup. connect() does the same lazily, so this is
     really just a place for startup to fail loudly if the database is unusable."""
     with connect(path) as conn:
-        conn.executescript(SCHEMA)
+        conn.executescript(PG_SCHEMA if isinstance(conn, _PgConn) else SCHEMA)
         _migrate(conn)
 
 
@@ -163,6 +232,9 @@ def _migrate(conn: sqlite3.Connection) -> None:
     for table, column, ddl in (
         ("profiles", "details_json", "TEXT NOT NULL DEFAULT '{}'"),
     ):
+        if isinstance(conn, _PgConn):
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {column} {ddl}")
+            continue
         existing = {row["name"] for row in conn.execute(f"PRAGMA table_info({table})")}
         if existing and column not in existing:
             conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {ddl}")
@@ -176,7 +248,7 @@ def _dumps(value) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def save_profile(payload: dict, report: dict, path: Path | str = DB_PATH) -> int:
+def save_profile(payload: dict, report: dict, path: Path | str | None = None) -> int:
     """Write the core submission.
 
     The core flow now carries everything a student enjoys filling in - contact,
@@ -192,7 +264,8 @@ def save_profile(payload: dict, report: dict, path: Path | str = DB_PATH) -> int
     now = _now()
 
     with connect(path) as conn:
-        cursor = conn.execute(
+        student_id = _insert(
+            conn,
             """INSERT INTO students (
                    created_at, updated_at, full_name, preferred_name, email, phone, city, state,
                    college, degree, branch, grad_year, score_type, score_value,
@@ -210,11 +283,11 @@ def save_profile(payload: dict, report: dict, path: Path | str = DB_PATH) -> int
                 _dumps(langs.get("certifications", [])), _dumps(portfolio),
             ),
         )
-        student_id = cursor.lastrowid
 
         _write_experience(conn, student_id, payload)
 
-        cursor = conn.execute(
+        return _insert(
+            conn,
             """INSERT INTO profiles (
                    student_id, created_at, taxonomy_version, role_id, role_fit, verdict,
                    selections_json, ratings_json, tool_stack_json, report_json)
@@ -226,7 +299,6 @@ def save_profile(payload: dict, report: dict, path: Path | str = DB_PATH) -> int
                 _dumps(payload.get("tool_stack", {})), _dumps(report),
             ),
         )
-        return cursor.lastrowid
 
 
 def _write_experience(conn: sqlite3.Connection, student_id: int, payload: dict) -> None:
@@ -259,7 +331,7 @@ def _write_experience(conn: sqlite3.Connection, student_id: int, payload: dict) 
 
 
 def update_profile_details(profile_id: int, payload: dict, report: dict,
-                           path: Path | str = DB_PATH) -> bool:
+                           path: Path | str | None = None) -> bool:
     """Apply the optional follow-up: availability, location and fit.
 
     Experience and education no longer arrive here - they are collected in the
@@ -293,7 +365,7 @@ def update_profile_details(profile_id: int, payload: dict, report: dict,
         return True
 
 
-def get_profile(profile_id: int, path: Path | str = DB_PATH) -> dict | None:
+def get_profile(profile_id: int, path: Path | str | None = None) -> dict | None:
     """The stored profile, reassembled. This is what the company dashboard reads."""
     with connect(path) as conn:
         row = conn.execute(
@@ -358,7 +430,7 @@ def get_profile(profile_id: int, path: Path | str = DB_PATH) -> dict | None:
     }
 
 
-def list_profiles(limit: int = 50, path: Path | str = DB_PATH) -> list[dict]:
+def list_profiles(limit: int = 50, path: Path | str | None = None) -> list[dict]:
     """Lightweight listing - the seed of the company-side dashboard."""
     with connect(path) as conn:
         rows = conn.execute(
@@ -378,7 +450,7 @@ def _as_int(value):
         return None
 
 
-def taxonomy_usage(path: Path | str = DB_PATH) -> dict[str, dict[str, int]]:
+def taxonomy_usage(path: Path | str | None = None) -> dict[str, dict[str, int]]:
     """How many submitted profiles reference each taxonomy id.
 
     This is what lets the admin panel say "12 students picked this" before
@@ -410,3 +482,31 @@ def taxonomy_usage(path: Path | str = DB_PATH) -> dict[str, dict[str, int]]:
             bump("skills", skill_id)
 
     return counts
+
+
+# ------------------------------------------------- taxonomy storage (Postgres only)
+
+
+def get_document(name: str) -> str | None:
+    with connect() as conn:
+        row = conn.execute("SELECT body FROM documents WHERE name = ?", (name,)).fetchone()
+    return row["body"] if row else None
+
+
+def put_document(name: str, body: str, only_if_missing: bool = False) -> None:
+    conflict = ("NOTHING" if only_if_missing else
+                "UPDATE SET body = excluded.body, updated_at = excluded.updated_at")
+    with connect() as conn:
+        conn.execute(
+            f"INSERT INTO documents (name, body, updated_at) VALUES (?,?,?) "
+            f"ON CONFLICT (name) DO {conflict}",
+            (name, body, _now()),
+        )
+
+
+def add_taxonomy_backup(body: str, label: str, keep: int) -> None:
+    with connect() as conn:
+        conn.execute("INSERT INTO taxonomy_backups (created_at, label, body) VALUES (?,?,?)",
+                     (_now(), label, body))
+        conn.execute("DELETE FROM taxonomy_backups WHERE id NOT IN "
+                     "(SELECT id FROM taxonomy_backups ORDER BY id DESC LIMIT ?)", (keep,))

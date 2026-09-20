@@ -25,7 +25,8 @@ import tempfile
 from datetime import date, datetime
 from pathlib import Path
 
-from taxonomy_loader import TAXONOMY_PATH, Taxonomy, load_taxonomy, vc_skill_ids
+import db
+from taxonomy_loader import TAXONOMY_PATH, Taxonomy, load_taxonomy, read_taxonomy_text, vc_skill_ids
 
 BACKUP_DIR = TAXONOMY_PATH.parent / "backups"
 KEEP_BACKUPS = 40
@@ -54,8 +55,7 @@ def slug_id(name: str, existing: set[str], prefix: str = "") -> str:
 
 
 def read_raw() -> dict:
-    with open(TAXONOMY_PATH, encoding="utf-8") as handle:
-        return json.load(handle)
+    return json.loads(read_taxonomy_text())
 
 
 def _all_ids(raw: dict) -> set[str]:
@@ -107,6 +107,11 @@ def save(raw: dict, label: str = "") -> Taxonomy:
     raw["version"] = int(raw.get("version", 0)) + 1
     raw["updated_at"] = date.today().isoformat()
 
+    if db.use_postgres():
+        db.add_taxonomy_backup(read_taxonomy_text(), label, KEEP_BACKUPS)
+        db.put_document("taxonomy.json", json.dumps(raw, indent=2, ensure_ascii=False) + "\n")
+        return load_taxonomy(force=True, fresh=True)
+
     if TAXONOMY_PATH.exists():
         BACKUP_DIR.mkdir(exist_ok=True)
         stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -129,7 +134,7 @@ def save(raw: dict, label: str = "") -> Taxonomy:
     os.replace(handle.name, TAXONOMY_PATH)
 
     # Force the reload so the edit is live even when CAARYA_RELOAD=0.
-    return load_taxonomy(force=True)
+    return load_taxonomy(force=True, fresh=True)
 
 
 # -------------------------------------------------------------------- create

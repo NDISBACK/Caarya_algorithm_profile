@@ -13,20 +13,22 @@ apps stay separate code; this only routes by path:
 import os
 
 # Deployment defaults; anything set in the environment wins.
-os.environ.setdefault("CAARYA_RELOAD", "0")
+# With Postgres, CAARYA_RELOAD=1 is what makes an admin edit visible on every server
+# instance (load_taxonomy re-reads at most every few seconds); files never change, so 0 otherwise.
+os.environ.setdefault("CAARYA_RELOAD", "1" if os.environ.get("DATABASE_URL") else "0")
 os.environ.setdefault("CAARYA_STUDENT_URL", "/")
-if os.environ.get("VERCEL"):
+if os.environ.get("VERCEL") and not os.environ.get("DATABASE_URL"):
     # Vercel's filesystem is read-only apart from /tmp, and /tmp is not shared or durable.
     os.environ.setdefault("CAARYA_DATA_DIR", "/tmp/caarya")
 
 import db  # noqa: E402
 from taxonomy_loader import bootstrap_data_dir, load_taxonomy  # noqa: E402
 
-if db.STORAGE_DIR:
+if db.STORAGE_DIR and not db.use_postgres():
     db.STORAGE_DIR.mkdir(parents=True, exist_ok=True)
 bootstrap_data_dir()
 db.init_db()
-load_taxonomy(force=True)
+load_taxonomy(force=True, fresh=True)
 
 from admin_app import app as admin_app  # noqa: E402
 from app import app as student_app  # noqa: E402

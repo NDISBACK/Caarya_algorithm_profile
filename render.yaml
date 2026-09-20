@@ -1,6 +1,5 @@
-# Free-plan config: no persistent disk, so the SQLite DB and taxonomy edits reset
-# on every redeploy/restart. For durable data, use plan: starter and add a disk
-# (mountPath /var/data) plus the CAARYA_DATA_DIR=/var/data env var.
+# Free plan. All data (students, profiles, taxonomy edits) lives in Neon Postgres via
+# DATABASE_URL, so redeploys and restarts lose nothing. Set DATABASE_URL in the Render dashboard.
 services:
   - type: web
     name: caarya
@@ -12,5 +11,5 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.3
-      - key: CAARYA_RELOAD
-        value: "0"
+      - key: DATABASE_URL
+        sync: false
