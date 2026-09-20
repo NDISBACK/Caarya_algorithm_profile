@@ -1,0 +1,947 @@
+{
+  "version": 159,
+  "updated_at": "2026-09-20",
+  "_note": "Single source of truth for roles, business services, value constructs and skills. The admin portal writes to this file. Skill ids are shared across value constructs on purpose - that overlap is what lets a rating in one place carry evidence into another.",
+  "roles": [
+    {
+      "id": "backend-development",
+      "name": "Backend Development",
+      "tagline": "Build the engine rooms - the APIs, data and systems that everything else runs on.",
+      "description": "Backend developers build what users never see but always feel: the APIs an app calls, the database holding its truth, the login that keeps it safe, and the machinery that keeps it fast when a thousand people show up at once.",
+      "business_services": [
+        {
+          "id": "api-development",
+          "name": "API Development & Management",
+          "tagline": "Design, build, document and tune the interfaces other systems talk to.",
+          "value_constructs": [
+            {
+              "id": "vc-design-rest-apis",
+              "name": "Design REST APIs",
+              "description": "Decide what the endpoints are, what they return, and how they behave before a line of code is written.",
+              "technical_skills": [
+                "rest-architecture",
+                "http-methods-status-codes"
+              ],
+              "transferable_skills": [
+                "structured-thinking",
+                "problem-solving"
+              ]
+            },
+            {
+              "id": "vc-build-api-endpoints",
+              "name": "Build API Endpoints",
+              "description": "Turn the design into working, deployed endpoints in a real backend framework.",
+              "technical_skills": [
+                "backend-languages",
+                "backend-frameworks"
+              ],
+              "transferable_skills": [
+                "execution",
+                "attention-to-detail"
+              ]
+            },
+            {
+              "id": "vc-create-api-documentation",
+              "name": "Create API Documentation",
+              "description": "Write the spec another developer can build against without asking you a single question.",
+              "technical_skills": [
+                "swagger-openapi",
+                "api-specifications"
+              ],
+              "transferable_skills": [
+                "technical-communication",
+                "documentation"
+              ]
+            },
+            {
+              "id": "vc-test-apis",
+              "name": "Test APIs",
+              "description": "Prove the endpoints work - and keep proving it automatically as the code changes.",
+              "technical_skills": [
+                "postman",
+                "automated-api-testing"
+              ],
+              "transferable_skills": [
+                "quality-orientation",
+                "analytical-thinking"
+              ]
+            },
+            {
+              "id": "vc-optimize-api-performance",
+              "name": "Optimize API Performance",
+              "description": "Make slow endpoints fast, and decide which slowness is worth fixing first.",
+              "technical_skills": [
+                "caching",
+                "response-optimization"
+              ],
+              "transferable_skills": [
+                "performance-thinking",
+                "prioritization"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "database-management",
+          "name": "Database Design & Management",
+          "tagline": "Model the data, relate it, query it, speed it up and keep it safe.",
+          "value_constructs": [
+            {
+              "id": "vc-design-database-schema",
+              "name": "Design Database Schema",
+              "description": "Turn a messy real-world problem into tables and columns that will still make sense a year later.",
+              "technical_skills": [
+                "sql",
+                "data-modelling"
+              ],
+              "transferable_skills": [
+                "systems-thinking",
+                "information-organization"
+              ]
+            },
+            {
+              "id": "vc-build-database-relationships",
+              "name": "Build Database Relationships",
+              "description": "Connect entities correctly so the data cannot drift out of sync with itself.",
+              "technical_skills": [
+                "joins-relations",
+                "normalization"
+              ],
+              "transferable_skills": [
+                "logical-reasoning",
+                "problem-decomposition"
+              ]
+            },
+            {
+              "id": "vc-write-database-queries",
+              "name": "Write Database Queries",
+              "description": "Get exactly the data you need out, correctly, whether by raw SQL or an ORM.",
+              "technical_skills": [
+                "sql",
+                "orm-frameworks"
+              ],
+              "transferable_skills": [
+                "analytical-thinking",
+                "accuracy"
+              ]
+            },
+            {
+              "id": "vc-optimize-database-performance",
+              "name": "Optimize Database Performance",
+              "description": "Find the query that is quietly taking three seconds, and make it take thirty milliseconds.",
+              "technical_skills": [
+                "indexing",
+                "query-optimization"
+              ],
+              "transferable_skills": [
+                "diagnosis",
+                "problem-solving"
+              ]
+            },
+            {
+              "id": "vc-backup-recovery-systems",
+              "name": "Create Backup & Recovery Systems",
+              "description": "Make sure that when something goes badly wrong, the data comes back.",
+              "technical_skills": [
+                "database-backups",
+                "recovery-processes"
+              ],
+              "transferable_skills": [
+                "risk-management",
+                "process-discipline"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "authentication-user-management",
+          "name": "Authentication & User Management",
+          "tagline": "Own who gets in, what they can touch, and how their session stays safe.",
+          "value_constructs": [
+            {
+              "id": "vc-build-signup-login",
+              "name": "Build Signup/Login Systems",
+              "description": "Build the front door: registration, login, and passwords stored so they can never be read back.",
+              "technical_skills": [
+                "auth-frameworks",
+                "password-hashing"
+              ],
+              "transferable_skills": [
+                "user-centric-thinking",
+                "attention-to-detail"
+              ]
+            },
+            {
+              "id": "vc-role-based-access",
+              "name": "Implement Role-Based Access",
+              "description": "Define who is allowed to do what, and enforce it in one place rather than fifty.",
+              "technical_skills": [
+                "rbac",
+                "authorization-middleware"
+              ],
+              "transferable_skills": [
+                "systems-thinking",
+                "rule-design"
+              ]
+            },
+            {
+              "id": "vc-token-authentication",
+              "name": "Implement Token Authentication",
+              "description": "Issue, verify and expire tokens so services can trust a request without re-asking for a password.",
+              "technical_skills": [
+                "jwt",
+                "oauth"
+              ],
+              "transferable_skills": [
+                "security-thinking",
+                "logical-reasoning"
+              ]
+            },
+            {
+              "id": "vc-password-recovery-flows",
+              "name": "Build Password Recovery Flows",
+              "description": "Get a locked-out user safely back in without opening a hole for someone else.",
+              "technical_skills": [
+                "email-apis",
+                "secure-token-generation"
+              ],
+              "transferable_skills": [
+                "journey-mapping",
+                "problem-solving"
+              ]
+            },
+            {
+              "id": "vc-user-session-management",
+              "name": "Create User Session Management",
+              "description": "Keep people logged in across devices, and log them out cleanly when it matters.",
+              "technical_skills": [
+                "sessions-cookies",
+                "redis"
+              ],
+              "transferable_skills": [
+                "risk-awareness",
+                "process-thinking"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "third-party-integrations",
+          "name": "Third-Party Integrations",
+          "tagline": "Wire your system into payments, messaging, SaaS tools and other people's APIs.",
+          "value_constructs": [
+            {
+              "id": "vc-integrate-payment-gateways",
+              "name": "Integrate Payment Gateways",
+              "description": "Take money reliably - and handle the half of the flow that happens after the user closes the tab.",
+              "technical_skills": [
+                "payment-apis",
+                "webhooks"
+              ],
+              "transferable_skills": [
+                "process-mapping",
+                "commercial-awareness"
+              ]
+            },
+            {
+              "id": "vc-integrate-email-sms",
+              "name": "Integrate Email/SMS Services",
+              "description": "Make the system talk to people: the right message, to the right person, at the right moment.",
+              "technical_skills": [
+                "smtp-messaging-apis",
+                "event-triggers"
+              ],
+              "transferable_skills": [
+                "communication-thinking",
+                "workflow-design"
+              ]
+            },
+            {
+              "id": "vc-integrate-saas-apis",
+              "name": "Integrate External SaaS APIs",
+              "description": "Read someone else's documentation and get their product working inside yours.",
+              "technical_skills": [
+                "api-integration",
+                "json-data-parsing"
+              ],
+              "transferable_skills": [
+                "adaptability",
+                "research"
+              ]
+            },
+            {
+              "id": "vc-webhook-handling",
+              "name": "Build Webhook Handling",
+              "description": "Receive events from the outside world and react to them correctly, even when they arrive twice.",
+              "technical_skills": [
+                "webhooks",
+                "event-driven-architecture"
+              ],
+              "transferable_skills": [
+                "cause-effect-thinking",
+                "debugging"
+              ]
+            },
+            {
+              "id": "vc-data-synchronization",
+              "name": "Create Data Synchronization Systems",
+              "description": "Keep two systems agreeing with each other on a schedule, without anyone watching.",
+              "technical_skills": [
+                "cron-jobs-queues",
+                "etl-logic"
+              ],
+              "transferable_skills": [
+                "process-management",
+                "reliability-thinking"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "backend-performance-scalability",
+          "name": "Backend Performance & Scalability",
+          "tagline": "Find what is slow, make it fast, and keep it standing under load.",
+          "value_constructs": [
+            {
+              "id": "vc-identify-bottlenecks",
+              "name": "Identify Backend Bottlenecks",
+              "description": "Measure before you guess: find the actual thing making the system slow.",
+              "technical_skills": [
+                "profiling",
+                "monitoring-log-analysis"
+              ],
+              "transferable_skills": [
+                "diagnosis",
+                "analytical-thinking"
+              ]
+            },
+            {
+              "id": "vc-implement-caching",
+              "name": "Implement Caching Systems",
+              "description": "Stop recomputing the same answer - and know when a cached answer becomes a wrong answer.",
+              "technical_skills": [
+                "redis",
+                "caching"
+              ],
+              "transferable_skills": [
+                "resource-optimization",
+                "decision-making"
+              ]
+            },
+            {
+              "id": "vc-asynchronous-processing",
+              "name": "Build Asynchronous Processing",
+              "description": "Move slow work off the request so the user is not left staring at a spinner.",
+              "technical_skills": [
+                "message-queues",
+                "background-jobs"
+              ],
+              "transferable_skills": [
+                "workflow-design",
+                "prioritization"
+              ]
+            },
+            {
+              "id": "vc-server-scalability",
+              "name": "Improve Server Scalability",
+              "description": "Design so that handling ten times the traffic means adding machines, not rewriting everything.",
+              "technical_skills": [
+                "load-balancing",
+                "horizontal-scaling"
+              ],
+              "transferable_skills": [
+                "systems-thinking",
+                "capacity-planning"
+              ]
+            },
+            {
+              "id": "vc-backend-monitoring",
+              "name": "Set Up Backend Monitoring",
+              "description": "Know something broke before a user tells you, and know exactly where.",
+              "technical_skills": [
+                "logging-apm-tools",
+                "error-tracking"
+              ],
+              "transferable_skills": [
+                "proactive-problem-solving",
+                "accountability"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "harness-service",
+          "name": "Harness Service Renamed",
+          "tagline": "",
+          "value_constructs": [
+            {
+              "id": "vc-harness-job",
+              "name": "Harness Job",
+              "description": "",
+              "technical_skills": [
+                "api-integration"
+              ],
+              "transferable_skills": [
+                "accountability"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "skills": {
+    "rest-architecture": {
+      "name": "REST architecture",
+      "type": "technical",
+      "hint": "Resources, verbs, statelessness - knowing what a well-shaped API looks like."
+    },
+    "http-methods-status-codes": {
+      "name": "HTTP methods & status codes",
+      "type": "technical",
+      "hint": "GET vs POST vs PATCH, and returning 404 vs 422 vs 500 correctly."
+    },
+    "backend-languages": {
+      "name": "Backend language (Node/Python/Java)",
+      "type": "technical",
+      "hint": "Writing real server-side code in at least one backend language."
+    },
+    "backend-frameworks": {
+      "name": "Backend frameworks",
+      "type": "technical",
+      "hint": "Express, Django, Flask, Spring, FastAPI - building on a framework rather than from scratch."
+    },
+    "swagger-openapi": {
+      "name": "Swagger / OpenAPI",
+      "type": "technical",
+      "hint": "Describing an API in a spec format that generates docs and clients."
+    },
+    "api-specifications": {
+      "name": "API specifications",
+      "type": "technical",
+      "hint": "Defining request/response contracts precisely enough to build against."
+    },
+    "postman": {
+      "name": "Postman",
+      "type": "technical",
+      "hint": "Exercising endpoints by hand, building collections, sharing them with a team."
+    },
+    "automated-api-testing": {
+      "name": "Automated API testing",
+      "type": "technical",
+      "hint": "Tests that hit your endpoints and run on every change."
+    },
+    "caching": {
+      "name": "Caching strategies",
+      "type": "technical",
+      "hint": "What to cache, for how long, and how to invalidate it."
+    },
+    "response-optimization": {
+      "name": "Response optimization",
+      "type": "technical",
+      "hint": "Payload size, pagination, compression, avoiding N+1 calls."
+    },
+    "sql": {
+      "name": "SQL",
+      "type": "technical",
+      "hint": "Writing SELECTs with joins, filters and aggregates without reaching for help."
+    },
+    "data-modelling": {
+      "name": "Data modelling",
+      "type": "technical",
+      "hint": "Turning real-world entities into tables, columns and types."
+    },
+    "joins-relations": {
+      "name": "Joins & relations",
+      "type": "technical",
+      "hint": "One-to-many, many-to-many, foreign keys and how they behave."
+    },
+    "normalization": {
+      "name": "Normalization",
+      "type": "technical",
+      "hint": "Removing duplicated data, and knowing when to deliberately denormalize."
+    },
+    "orm-frameworks": {
+      "name": "ORM frameworks",
+      "type": "technical",
+      "hint": "Prisma, SQLAlchemy, Sequelize, Hibernate - querying through an object layer."
+    },
+    "indexing": {
+      "name": "Indexing",
+      "type": "technical",
+      "hint": "Adding the right index and understanding what it costs on writes."
+    },
+    "query-optimization": {
+      "name": "Query optimization",
+      "type": "technical",
+      "hint": "Reading a query plan and rewriting the query that caused it."
+    },
+    "database-backups": {
+      "name": "Database backups",
+      "type": "technical",
+      "hint": "Scheduled dumps, retention, and storing them somewhere that survives."
+    },
+    "recovery-processes": {
+      "name": "Recovery processes",
+      "type": "technical",
+      "hint": "Actually restoring from a backup - and having tested that you can."
+    },
+    "auth-frameworks": {
+      "name": "Authentication frameworks",
+      "type": "technical",
+      "hint": "Passport, Devise, Django auth, Auth0, Firebase Auth."
+    },
+    "password-hashing": {
+      "name": "Password hashing",
+      "type": "technical",
+      "hint": "bcrypt/argon2, salting, and why you never store a password directly."
+    },
+    "rbac": {
+      "name": "Role-based access control",
+      "type": "technical",
+      "hint": "Roles, permissions, and checking them consistently."
+    },
+    "authorization-middleware": {
+      "name": "Authorization middleware",
+      "type": "technical",
+      "hint": "Enforcing access rules in one layer every request passes through."
+    },
+    "jwt": {
+      "name": "JWT",
+      "type": "technical",
+      "hint": "Signing, verifying, expiring and refreshing tokens."
+    },
+    "oauth": {
+      "name": "OAuth",
+      "type": "technical",
+      "hint": "Login-with-Google style flows, scopes and consent."
+    },
+    "email-apis": {
+      "name": "Email APIs",
+      "type": "technical",
+      "hint": "SendGrid, SES, Resend - sending transactional mail from code."
+    },
+    "secure-token-generation": {
+      "name": "Secure token generation",
+      "type": "technical",
+      "hint": "Single-use, expiring, unguessable tokens for reset links."
+    },
+    "sessions-cookies": {
+      "name": "Sessions & cookies",
+      "type": "technical",
+      "hint": "Session stores, cookie flags, and staying logged in safely."
+    },
+    "redis": {
+      "name": "Redis",
+      "type": "technical",
+      "hint": "Using an in-memory store for sessions, caches or queues."
+    },
+    "payment-apis": {
+      "name": "Payment APIs",
+      "type": "technical",
+      "hint": "Razorpay, Stripe - orders, captures, refunds and reconciliation."
+    },
+    "webhooks": {
+      "name": "Webhooks",
+      "type": "technical",
+      "hint": "Receiving callbacks from another system, verifying and handling them."
+    },
+    "smtp-messaging-apis": {
+      "name": "SMTP & messaging APIs",
+      "type": "technical",
+      "hint": "Email and SMS delivery through a provider's API."
+    },
+    "event-triggers": {
+      "name": "Event triggers",
+      "type": "technical",
+      "hint": "Firing the right notification off the right system event."
+    },
+    "api-integration": {
+      "name": "API integration",
+      "type": "technical",
+      "hint": "Auth, pagination, rate limits and retries against someone else's API."
+    },
+    "json-data-parsing": {
+      "name": "JSON & data parsing",
+      "type": "technical",
+      "hint": "Reading, reshaping and validating data coming from outside."
+    },
+    "event-driven-architecture": {
+      "name": "Event-driven architecture",
+      "type": "technical",
+      "hint": "Designing around events and handlers rather than direct calls."
+    },
+    "cron-jobs-queues": {
+      "name": "Cron jobs & queues",
+      "type": "technical",
+      "hint": "Scheduled and queued work that runs without a human."
+    },
+    "etl-logic": {
+      "name": "ETL logic",
+      "type": "technical",
+      "hint": "Extracting, transforming and loading data between two systems."
+    },
+    "profiling": {
+      "name": "Profiling",
+      "type": "technical",
+      "hint": "Measuring where time and memory actually go in running code."
+    },
+    "monitoring-log-analysis": {
+      "name": "Monitoring & log analysis",
+      "type": "technical",
+      "hint": "Reading logs and dashboards to find the real cause."
+    },
+    "message-queues": {
+      "name": "Message queues",
+      "type": "technical",
+      "hint": "RabbitMQ, SQS, BullMQ, Celery - decoupling producers from consumers."
+    },
+    "background-jobs": {
+      "name": "Background jobs",
+      "type": "technical",
+      "hint": "Workers, retries and dead-letter handling for slow tasks."
+    },
+    "load-balancing": {
+      "name": "Load balancing",
+      "type": "technical",
+      "hint": "Spreading traffic across instances and handling health checks."
+    },
+    "horizontal-scaling": {
+      "name": "Horizontal scaling",
+      "type": "technical",
+      "hint": "Running many stateless instances instead of one big one."
+    },
+    "logging-apm-tools": {
+      "name": "Logging & APM tools",
+      "type": "technical",
+      "hint": "Structured logs, traces, Datadog/New Relic/Grafana style tooling."
+    },
+    "error-tracking": {
+      "name": "Error tracking",
+      "type": "technical",
+      "hint": "Sentry-style capture, grouping and alerting on exceptions."
+    },
+    "structured-thinking": {
+      "name": "Structured thinking",
+      "type": "transferable",
+      "hint": "Breaking a vague problem into an ordered, complete set of parts."
+    },
+    "problem-solving": {
+      "name": "Problem solving",
+      "type": "transferable",
+      "hint": "Getting to a working answer when the path isn't given to you."
+    },
+    "execution": {
+      "name": "Execution",
+      "type": "transferable",
+      "hint": "Finishing what you start, on the timeline you said."
+    },
+    "attention-to-detail": {
+      "name": "Attention to detail",
+      "type": "transferable",
+      "hint": "Catching the small wrong thing before someone else does."
+    },
+    "technical-communication": {
+      "name": "Technical communication",
+      "type": "transferable",
+      "hint": "Explaining something technical so a reader actually gets it."
+    },
+    "documentation": {
+      "name": "Documentation",
+      "type": "transferable",
+      "hint": "Writing things down so the next person doesn't need you."
+    },
+    "quality-orientation": {
+      "name": "Quality orientation",
+      "type": "transferable",
+      "hint": "Caring whether it is genuinely right, not just whether it runs."
+    },
+    "analytical-thinking": {
+      "name": "Analytical thinking",
+      "type": "transferable",
+      "hint": "Reasoning from evidence to a conclusion you can defend."
+    },
+    "performance-thinking": {
+      "name": "Performance thinking",
+      "type": "transferable",
+      "hint": "Instinctively asking what this costs at scale."
+    },
+    "prioritization": {
+      "name": "Prioritization",
+      "type": "transferable",
+      "hint": "Knowing which of ten valid things to do first."
+    },
+    "systems-thinking": {
+      "name": "Systems thinking",
+      "type": "transferable",
+      "hint": "Seeing how parts affect each other, not just each part alone."
+    },
+    "information-organization": {
+      "name": "Information organization",
+      "type": "transferable",
+      "hint": "Giving messy information a structure other people can navigate."
+    },
+    "logical-reasoning": {
+      "name": "Logical reasoning",
+      "type": "transferable",
+      "hint": "Following rules and conditions through without losing the thread."
+    },
+    "problem-decomposition": {
+      "name": "Problem decomposition",
+      "type": "transferable",
+      "hint": "Splitting something big into pieces small enough to solve."
+    },
+    "accuracy": {
+      "name": "Accuracy",
+      "type": "transferable",
+      "hint": "Getting it exactly right the first time, repeatedly."
+    },
+    "diagnosis": {
+      "name": "Diagnosis",
+      "type": "transferable",
+      "hint": "Working from a symptom back to the actual cause."
+    },
+    "risk-management": {
+      "name": "Risk management",
+      "type": "transferable",
+      "hint": "Spotting what could go wrong and covering it in advance."
+    },
+    "process-discipline": {
+      "name": "Process discipline",
+      "type": "transferable",
+      "hint": "Following the steps every time, including when nobody checks."
+    },
+    "user-centric-thinking": {
+      "name": "User-centric thinking",
+      "type": "transferable",
+      "hint": "Designing from the person's experience backwards."
+    },
+    "rule-design": {
+      "name": "Rule design",
+      "type": "transferable",
+      "hint": "Writing rules that are consistent and hold at the edges."
+    },
+    "security-thinking": {
+      "name": "Security thinking",
+      "type": "transferable",
+      "hint": "Asking how someone would abuse this, before they do."
+    },
+    "journey-mapping": {
+      "name": "Journey mapping",
+      "type": "transferable",
+      "hint": "Tracing every step a user takes, including the unhappy paths."
+    },
+    "risk-awareness": {
+      "name": "Risk awareness",
+      "type": "transferable",
+      "hint": "Sensing where the dangerous parts of a system are."
+    },
+    "process-thinking": {
+      "name": "Process thinking",
+      "type": "transferable",
+      "hint": "Seeing work as a repeatable flow that can be improved."
+    },
+    "process-mapping": {
+      "name": "Process mapping",
+      "type": "transferable",
+      "hint": "Drawing out how a multi-step flow really works end to end."
+    },
+    "commercial-awareness": {
+      "name": "Commercial awareness",
+      "type": "transferable",
+      "hint": "Understanding how the business actually makes its money."
+    },
+    "communication-thinking": {
+      "name": "Communication thinking",
+      "type": "transferable",
+      "hint": "Choosing the right message, channel and timing."
+    },
+    "workflow-design": {
+      "name": "Workflow design",
+      "type": "transferable",
+      "hint": "Arranging steps and handoffs so work flows without stalling."
+    },
+    "adaptability": {
+      "name": "Adaptability",
+      "type": "transferable",
+      "hint": "Getting productive fast in an unfamiliar tool or codebase."
+    },
+    "research": {
+      "name": "Research",
+      "type": "transferable",
+      "hint": "Finding the answer yourself, in docs or source, before asking."
+    },
+    "cause-effect-thinking": {
+      "name": "Cause-and-effect thinking",
+      "type": "transferable",
+      "hint": "Tracing what triggered what, in the right order."
+    },
+    "debugging": {
+      "name": "Debugging",
+      "type": "transferable",
+      "hint": "Narrowing down systematically instead of changing things at random."
+    },
+    "process-management": {
+      "name": "Process management",
+      "type": "transferable",
+      "hint": "Keeping a running process healthy over time."
+    },
+    "reliability-thinking": {
+      "name": "Reliability thinking",
+      "type": "transferable",
+      "hint": "Designing for the case where a step fails or repeats."
+    },
+    "resource-optimization": {
+      "name": "Resource optimization",
+      "type": "transferable",
+      "hint": "Getting more out of the compute, time or money you already have."
+    },
+    "decision-making": {
+      "name": "Decision making",
+      "type": "transferable",
+      "hint": "Committing to a choice with incomplete information."
+    },
+    "capacity-planning": {
+      "name": "Capacity planning",
+      "type": "transferable",
+      "hint": "Estimating what you'll need before you need it."
+    },
+    "proactive-problem-solving": {
+      "name": "Proactive problem solving",
+      "type": "transferable",
+      "hint": "Fixing the thing that hasn't broken yet but will."
+    },
+    "accountability": {
+      "name": "Accountability",
+      "type": "transferable",
+      "hint": "Owning the outcome, including when it goes wrong."
+    }
+  },
+  "rating_scale": [
+    {
+      "value": 1,
+      "label": "Never done it",
+      "hint": "Heard of it at most."
+    },
+    {
+      "value": 2,
+      "label": "Learning it",
+      "hint": "Tried it in a tutorial or class."
+    },
+    {
+      "value": 3,
+      "label": "Done it with help",
+      "hint": "Used it in a project, needed guidance or Google throughout."
+    },
+    {
+      "value": 4,
+      "label": "Can do it alone",
+      "hint": "Used it independently in something real."
+    },
+    {
+      "value": 5,
+      "label": "Could teach it",
+      "hint": "Confident enough to explain it and unblock others."
+    }
+  ],
+  "industries": [
+    "EdTech",
+    "FinTech",
+    "HealthTech",
+    "E-commerce & D2C",
+    "SaaS & B2B software",
+    "AgriTech",
+    "CleanTech & Energy",
+    "Logistics & Supply Chain",
+    "Media & Entertainment",
+    "Gaming",
+    "Travel & Hospitality",
+    "Real Estate & PropTech",
+    "Manufacturing & Industry",
+    "Social Impact & NGOs",
+    "Government & Public Systems",
+    "Consulting & Services",
+    "Sports & Fitness",
+    "Fashion & Lifestyle",
+    "Deep Tech & AI",
+    "Not sure yet"
+  ],
+  "causes": [
+    "Climate action & sustainability",
+    "Education access",
+    "Healthcare access",
+    "Financial inclusion",
+    "Women's safety & equity",
+    "Rural & small-town development",
+    "Mental health",
+    "Animal welfare",
+    "Open source & digital public goods",
+    "Employment & livelihoods",
+    "Accessibility & disability inclusion",
+    "Food security",
+    "Privacy & digital rights",
+    "Arts & culture",
+    "None in particular"
+  ],
+  "tool_stack": {
+    "Languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java",
+      "C++",
+      "C#",
+      "Go",
+      "PHP",
+      "Ruby",
+      "Rust",
+      "Kotlin",
+      "SQL"
+    ],
+    "Backend frameworks": [
+      "Node.js / Express",
+      "NestJS",
+      "Django",
+      "Flask",
+      "FastAPI",
+      "Spring Boot",
+      "Laravel",
+      "Rails",
+      ".NET"
+    ],
+    "Databases": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "SQLite",
+      "Redis",
+      "Firebase",
+      "Supabase",
+      "Elasticsearch"
+    ],
+    "Cloud & DevOps": [
+      "AWS",
+      "Google Cloud",
+      "Azure",
+      "Docker",
+      "Kubernetes",
+      "Vercel",
+      "Netlify",
+      "Heroku",
+      "Nginx",
+      "CI/CD pipelines"
+    ],
+    "Tools & practice": [
+      "Git / GitHub",
+      "Postman",
+      "Swagger",
+      "Linux / shell",
+      "Jira",
+      "Figma",
+      "Sentry",
+      "Grafana",
+      "RabbitMQ / Kafka",
+      "Stripe / Razorpay"
+    ]
+  }
+}

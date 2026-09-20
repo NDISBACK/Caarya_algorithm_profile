@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caarya — Build your profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Plus+Jakarta+Sans:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script>
+    // Avoids a flash of the wrong theme: applies a remembered override,
+    // if any, before the stylesheet paints. Falls through to the OS
+    // preference (handled in CSS) when nothing is stored.
+    (function () {
+      try {
+        var t = localStorage.getItem('caarya-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <canvas id="bends-bg" class="no-print" aria-hidden="true"></canvas>
+  <button class="theme-toggle no-print" id="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+  <div class="app">
+    <!-- Pinned on the left: the map of what you're building. On a phone it
+         becomes a summary strip above the form that expands on tap. -->
+    <aside class="side">
+      <div class="map-slot" id="map-slot" aria-label="What you have built so far"></div>
+
+      <div class="side-foot">
+        <span class="saved-note" id="saved-note"></span>
+        <button class="btn-quiet" id="reset" type="button">Start over</button>
+      </div>
+    </aside>
+
+    <main>
+      <div class="rail">
+        <div class="brand"><strong>caarya</strong><span>profile</span></div>
+        <nav aria-label="Progress"><ol id="rail"></ol></nav>
+      </div>
+
+      <div id="boot" class="loading">Loading your form…</div>
+      <div id="steps" hidden></div>
+    </main>
+  </div>
+
+  <!-- Outside .app on purpose: .side is position:sticky, which always creates
+       a stacking context, and a fixed bar nested inside one is painted behind
+       the form column however high its z-index. -->
+  <div class="navbar" id="navbar">
+    <div class="progress">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="progress-label"><span id="progress-label">Getting started</span></div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" id="back" type="button">Back</button>
+      <button class="btn btn-primary" id="next" type="button">Continue</button>
+    </div>
+  </div>
+
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/fields.js"></script>
+  <script src="/static/js/thoughtline.js"></script>
+  <script src="/static/js/journey.js"></script>
+  <script src="/static/js/wizard.js"></script>
+  <script src="/static/js/theme.js"></script>
+  <script src="/static/js/bends.js"></script>
+</body>
+</html>

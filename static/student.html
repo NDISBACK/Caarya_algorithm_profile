@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caarya — Candidate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Plus+Jakarta+Sans:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('caarya-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+    // Locks report.js to the company view and points it at the admin's own
+    // read-only endpoint. The personal view is never reachable from here.
+    window.CAARYA_VIEW_LOCK = 'company';
+    window.CAARYA_PROFILE_ENDPOINT = '/api/admin/profiles';
+    window.CAARYA_BACK_LINK = '/#students';
+  </script>
+</head>
+<body>
+  <canvas id="bends-bg" class="no-print" aria-hidden="true"></canvas>
+  <button class="theme-toggle no-print" id="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+  <div class="report">
+    <div id="boot" class="loading">Loading the candidate…</div>
+    <div id="report" hidden></div>
+  </div>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/fields.js"></script>
+  <script src="/static/js/report.js"></script>
+  <script src="/static/js/theme.js"></script>
+  <script src="/static/js/bends.js"></script>
+</body>
+</html>

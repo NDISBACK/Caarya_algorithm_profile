@@ -1,0 +1,2069 @@
+{
+  "version": 1,
+  "updated_at": "2026-09-20",
+  "_note": "States and union territories are complete. The college list is a starter set of well-known institutions, not the full AICTE/UGC register - the field it feeds is a suggestion list, not a constraint, so a student at anything not listed here just types it and it is stored exactly as typed. Add entries by editing this file; nothing caches it beyond a server restart.",
+  "states": [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+    "Andaman and Nicobar Islands",
+    "Chandigarh",
+    "Dadra and Nagar Haveli and Daman and Diu",
+    "Delhi",
+    "Jammu and Kashmir",
+    "Ladakh",
+    "Lakshadweep",
+    "Puducherry"
+  ],
+  "colleges": [
+    {
+      "name": "ABES Engineering College",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Acharya Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Acharya Nagarjuna University",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Adamas University",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Ahmedabad University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "AISSMS College of Engineering",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Ajay Kumar Garg Engineering College",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Aligarh Muslim University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Allahabad University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Alliance University",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Ambedkar University Delhi",
+      "state": "Delhi"
+    },
+    {
+      "name": "Amity University Chhattisgarh",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Amity University Gurugram",
+      "state": "Haryana"
+    },
+    {
+      "name": "Amity University Madhya Pradesh",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Amity University Rajasthan",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Amity University, Noida",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Amrita Vishwa Vidyapeetham, Amritapuri",
+      "state": "Kerala"
+    },
+    {
+      "name": "Amrita Vishwa Vidyapeetham, Coimbatore",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Andhra Loyola College",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Andhra University",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Anil Neerukonda Institute of Technology and Sciences",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Anna University",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Anurag University",
+      "state": "Telangana"
+    },
+    {
+      "name": "Army Institute of Technology, Pune",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Arya College of Engineering and IT",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Aryabhatta Knowledge University",
+      "state": "Bihar"
+    },
+    {
+      "name": "Ashoka University",
+      "state": "Haryana"
+    },
+    {
+      "name": "Assam Don Bosco University",
+      "state": "Assam"
+    },
+    {
+      "name": "Assam Engineering College",
+      "state": "Assam"
+    },
+    {
+      "name": "B M S College of Engineering",
+      "state": "Karnataka"
+    },
+    {
+      "name": "B S Abdur Rahman Crescent Institute",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Baba Banda Singh Bahadur Engineering College",
+      "state": "Punjab"
+    },
+    {
+      "name": "Babu Banarasi Das University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Banaras Hindu University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Banasthali Vidyapith",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Bangalore Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Bangalore University",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Bannari Amman Institute of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Bapatla Engineering College",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Barkatullah University",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Bennett University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Bethune College",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Bhagalpur College of Engineering",
+      "state": "Bihar"
+    },
+    {
+      "name": "Bharathiar University",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Bharathidasan University",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Bharati Vidyapeeth College of Engineering, Delhi",
+      "state": "Delhi"
+    },
+    {
+      "name": "Bharati Vidyapeeth College of Engineering, Pune",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Bhilai Institute of Technology, Durg",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Birla Institute of Technology and Science, Pilani",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Birla Institute of Technology, Mesra",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Birla Institute of Technology, Patna",
+      "state": "Bihar"
+    },
+    {
+      "name": "Birla Vishvakarma Mahavidyalaya",
+      "state": "Gujarat"
+    },
+    {
+      "name": "BIT Sindri",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "BITS Pilani, Hyderabad Campus",
+      "state": "Telangana"
+    },
+    {
+      "name": "BITS Pilani, K K Birla Goa Campus",
+      "state": "Goa"
+    },
+    {
+      "name": "BML Munjal University",
+      "state": "Haryana"
+    },
+    {
+      "name": "BMS Institute of Technology and Management",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Bundelkhand University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "C V Raman Global University",
+      "state": "Odisha"
+    },
+    {
+      "name": "Calicut University Centre, Kavaratti",
+      "state": "Lakshadweep"
+    },
+    {
+      "name": "Cambridge Institute of Technology, Ranchi",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Central Agricultural University, Imphal",
+      "state": "Manipur"
+    },
+    {
+      "name": "Central University of Jharkhand",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Central University of South Bihar",
+      "state": "Bihar"
+    },
+    {
+      "name": "Chaitanya Bharathi Institute of Technology",
+      "state": "Telangana"
+    },
+    {
+      "name": "Chandigarh College of Engineering and Technology",
+      "state": "Chandigarh"
+    },
+    {
+      "name": "Chandigarh University (Jhanjeri)",
+      "state": "Haryana"
+    },
+    {
+      "name": "Chandigarh University, Mohali",
+      "state": "Punjab"
+    },
+    {
+      "name": "Chandragupt Institute of Management Patna",
+      "state": "Bihar"
+    },
+    {
+      "name": "Charotar University of Science and Technology (CHARUSAT)",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Chhatrapati Shahu Ji Maharaj University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Chhattisgarh Swami Vivekanand Technical University",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Chitkara University, Himachal Pradesh",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "Chitkara University, Punjab",
+      "state": "Punjab"
+    },
+    {
+      "name": "Christ College of Engineering and Technology",
+      "state": "Puducherry"
+    },
+    {
+      "name": "Christ University",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Cluster Innovation Centre, University of Delhi",
+      "state": "Delhi"
+    },
+    {
+      "name": "CMR Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Cochin University of Science and Technology (CUSAT)",
+      "state": "Kerala"
+    },
+    {
+      "name": "Coimbatore Institute of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "College of Engineering and Technology, Bhubaneswar",
+      "state": "Odisha"
+    },
+    {
+      "name": "College of Engineering Trivandrum",
+      "state": "Kerala"
+    },
+    {
+      "name": "College of Engineering, Guindy",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "College of Engineering, Pune (COEP Technological University)",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Cotton University",
+      "state": "Assam"
+    },
+    {
+      "name": "Cummins College of Engineering for Women",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "CVR College of Engineering",
+      "state": "Telangana"
+    },
+    {
+      "name": "D Y Patil College of Engineering, Akurdi",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "DAV College, Chandigarh",
+      "state": "Chandigarh"
+    },
+    {
+      "name": "Dayalbagh Educational Institute",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Dayananda Sagar College of Engineering",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Deenbandhu Chhotu Ram University of Science and Technology",
+      "state": "Haryana"
+    },
+    {
+      "name": "Delhi College of Arts and Commerce",
+      "state": "Delhi"
+    },
+    {
+      "name": "Delhi Technological University",
+      "state": "Delhi"
+    },
+    {
+      "name": "Devi Ahilya Vishwavidyalaya, Indore",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Dharmsinh Desai University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT)",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Dibrugarh University",
+      "state": "Assam"
+    },
+    {
+      "name": "DIT University",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Don Bosco College of Engineering, Goa",
+      "state": "Goa"
+    },
+    {
+      "name": "Doon University",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Dr B R Ambedkar National Institute of Technology, Jalandhar",
+      "state": "Punjab"
+    },
+    {
+      "name": "Dr. A.P.J. Abdul Kalam Technical University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Dr. B. R. Ambedkar Institute of Technology, Port Blair",
+      "state": "Andaman and Nicobar Islands"
+    },
+    {
+      "name": "Dr. Babasaheb Ambedkar Marathwada University",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Dwarkadas J Sanghvi College of Engineering",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Easwari Engineering College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Eliezer Joldan Memorial College",
+      "state": "Ladakh"
+    },
+    {
+      "name": "Federal Institute of Science and Technology (FISAT)",
+      "state": "Kerala"
+    },
+    {
+      "name": "Fergusson College, Pune",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Fr. Conceicao Rodrigues College of Engineering",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "G B Pant University of Agriculture and Technology",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "G Narayanamma Institute of Technology and Science",
+      "state": "Telangana"
+    },
+    {
+      "name": "Galgotias College of Engineering and Technology",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Galgotias University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Ganpat University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Gargi College",
+      "state": "Delhi"
+    },
+    {
+      "name": "Gauhati University",
+      "state": "Assam"
+    },
+    {
+      "name": "Gayatri Vidya Parishad College of Engineering",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Girijananda Chowdhury University",
+      "state": "Assam"
+    },
+    {
+      "name": "GITAM (Deemed to be University)",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "GLA University, Mathura",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Global Academy of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Goa College of Engineering",
+      "state": "Goa"
+    },
+    {
+      "name": "Goa University",
+      "state": "Goa"
+    },
+    {
+      "name": "Gokaraju Rangaraju Institute of Engineering and Technology",
+      "state": "Telangana"
+    },
+    {
+      "name": "Government College of Engineering and Technology, Jammu",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "Government College of Engineering, Amravati",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Government College of Engineering, Aurangabad",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Government College of Engineering, Daman",
+      "state": "Dadra and Nagar Haveli and Daman and Diu"
+    },
+    {
+      "name": "Government College of Engineering, Salem",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Government College of Technology, Coimbatore",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Government Engineering College Barton Hill",
+      "state": "Kerala"
+    },
+    {
+      "name": "Government Engineering College Raipur",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Government Engineering College Thrissur",
+      "state": "Kerala"
+    },
+    {
+      "name": "Government Polytechnic, Daman",
+      "state": "Dadra and Nagar Haveli and Daman and Diu"
+    },
+    {
+      "name": "Graphic Era University",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Gujarat Technological University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Gujarat University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Guru Gobind Singh Indraprastha University",
+      "state": "Delhi"
+    },
+    {
+      "name": "Guru Jambheshwar University of Science and Technology",
+      "state": "Haryana"
+    },
+    {
+      "name": "Guru Nanak Dev Engineering College, Ludhiana",
+      "state": "Punjab"
+    },
+    {
+      "name": "Guru Nanak Dev University",
+      "state": "Punjab"
+    },
+    {
+      "name": "Hansraj College",
+      "state": "Delhi"
+    },
+    {
+      "name": "Harcourt Butler Technical University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Hemvati Nandan Bahuguna Garhwal University",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Heritage Institute of Technology",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Himachal Pradesh University",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "Himalayan University",
+      "state": "Arunachal Pradesh"
+    },
+    {
+      "name": "Hindu College",
+      "state": "Delhi"
+    },
+    {
+      "name": "Hindustan Institute of Technology and Science",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "ICFAI University Tripura",
+      "state": "Tripura"
+    },
+    {
+      "name": "IIIT Bhopal",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "IIIT Naya Raipur",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "IIIT Sri City",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "IIMT University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "IK Gujral Punjab Technical University",
+      "state": "Punjab"
+    },
+    {
+      "name": "Indian Institute of Engineering Science and Technology, Shibpur",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Indian Institute of Information Technology Allahabad",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Indian Institute of Information Technology and Management Kerala",
+      "state": "Kerala"
+    },
+    {
+      "name": "Indian Institute of Information Technology Bhagalpur",
+      "state": "Bihar"
+    },
+    {
+      "name": "Indian Institute of Information Technology Guwahati",
+      "state": "Assam"
+    },
+    {
+      "name": "Indian Institute of Information Technology Kota",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Indian Institute of Information Technology Lucknow",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Indian Institute of Information Technology Manipur",
+      "state": "Manipur"
+    },
+    {
+      "name": "Indian Institute of Information Technology Ranchi",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Indian Institute of Information Technology Sonepat",
+      "state": "Haryana"
+    },
+    {
+      "name": "Indian Institute of Information Technology, Design and Manufacturing Jabalpur",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Indian Institute of Information Technology, Design and Manufacturing Kancheepuram",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Indian Institute of Management Ahmedabad",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Indian Institute of Management Amritsar",
+      "state": "Punjab"
+    },
+    {
+      "name": "Indian Institute of Management Bangalore",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Indian Institute of Management Bodh Gaya",
+      "state": "Bihar"
+    },
+    {
+      "name": "Indian Institute of Management Calcutta",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Indian Institute of Management Hyderabad",
+      "state": "Telangana"
+    },
+    {
+      "name": "Indian Institute of Management Indore",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Indian Institute of Management Jammu",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "Indian Institute of Management Kashipur",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Indian Institute of Management Kozhikode",
+      "state": "Kerala"
+    },
+    {
+      "name": "Indian Institute of Management Lucknow",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Indian Institute of Management Mumbai (NITIE)",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Indian Institute of Management Nagpur",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Indian Institute of Management Raipur",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Indian Institute of Management Ranchi",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Indian Institute of Management Rohtak",
+      "state": "Haryana"
+    },
+    {
+      "name": "Indian Institute of Management Sambalpur",
+      "state": "Odisha"
+    },
+    {
+      "name": "Indian Institute of Management Shillong",
+      "state": "Meghalaya"
+    },
+    {
+      "name": "Indian Institute of Management Sirmaur",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "Indian Institute of Management Tiruchirappalli",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Indian Institute of Management Udaipur",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Indian Institute of Management Visakhapatnam",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Indian Institute of Science, Bengaluru",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Indian Institute of Space Science and Technology (IIST)",
+      "state": "Kerala"
+    },
+    {
+      "name": "Indian Institute of Technology (BHU) Varanasi",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Indian Institute of Technology (ISM) Dhanbad",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Indian Institute of Technology Bhilai",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Indian Institute of Technology Bhubaneswar",
+      "state": "Odisha"
+    },
+    {
+      "name": "Indian Institute of Technology Bombay",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Indian Institute of Technology Delhi",
+      "state": "Delhi"
+    },
+    {
+      "name": "Indian Institute of Technology Delhi (Sonipat Extension)",
+      "state": "Haryana"
+    },
+    {
+      "name": "Indian Institute of Technology Dharwad",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Indian Institute of Technology Gandhinagar",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Indian Institute of Technology Goa",
+      "state": "Goa"
+    },
+    {
+      "name": "Indian Institute of Technology Guwahati",
+      "state": "Assam"
+    },
+    {
+      "name": "Indian Institute of Technology Hyderabad",
+      "state": "Telangana"
+    },
+    {
+      "name": "Indian Institute of Technology Indore",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Indian Institute of Technology Jammu",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "Indian Institute of Technology Jodhpur",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Indian Institute of Technology Kanpur",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Indian Institute of Technology Kharagpur",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Indian Institute of Technology Madras",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Indian Institute of Technology Mandi",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "Indian Institute of Technology Palakkad",
+      "state": "Kerala"
+    },
+    {
+      "name": "Indian Institute of Technology Patna",
+      "state": "Bihar"
+    },
+    {
+      "name": "Indian Institute of Technology Roorkee",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Indian Institute of Technology Ropar",
+      "state": "Punjab"
+    },
+    {
+      "name": "Indian Institute of Technology Tirupati",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Indian School of Business (ISB)",
+      "state": "Telangana"
+    },
+    {
+      "name": "Indian Statistical Institute, Kolkata",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Indira Gandhi Delhi Technical University for Women",
+      "state": "Delhi"
+    },
+    {
+      "name": "Indira Gandhi Medical College and Research Institute",
+      "state": "Puducherry"
+    },
+    {
+      "name": "Indraprastha Institute of Information Technology Delhi (IIIT-Delhi)",
+      "state": "Delhi"
+    },
+    {
+      "name": "Institute of Chemical Technology, Mumbai",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Institute of Engineering and Management (IEM)",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Institute of Engineering and Technology, Lucknow",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Institute of Technical Education and Research (ITER)",
+      "state": "Odisha"
+    },
+    {
+      "name": "Integral University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "International Institute of Information Technology Bangalore (IIIT-B)",
+      "state": "Karnataka"
+    },
+    {
+      "name": "International Institute of Information Technology Bhubaneswar",
+      "state": "Odisha"
+    },
+    {
+      "name": "International Institute of Information Technology Hyderabad (IIIT-H)",
+      "state": "Telangana"
+    },
+    {
+      "name": "Invertis University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Islamic University of Science and Technology",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "Jabalpur Engineering College",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Jadavpur University",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Jai Hind College, Mumbai",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Jain (Deemed-to-be University)",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Jalpaiguri Government Engineering College",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Jamia Millia Islamia",
+      "state": "Delhi"
+    },
+    {
+      "name": "Jawaharlal Nehru Rajkeeya Mahavidyalaya",
+      "state": "Andaman and Nicobar Islands"
+    },
+    {
+      "name": "Jawaharlal Nehru Technological University Hyderabad",
+      "state": "Telangana"
+    },
+    {
+      "name": "Jawaharlal Nehru University",
+      "state": "Delhi"
+    },
+    {
+      "name": "Jaypee Institute of Information Technology, Noida",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Jaypee University of Information Technology, Waknaghat",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "JECRC University",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Jesus and Mary College",
+      "state": "Delhi"
+    },
+    {
+      "name": "Jorhat Engineering College",
+      "state": "Assam"
+    },
+    {
+      "name": "JSS Academy of Technical Education, Noida",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "JSS Science and Technology University, Mysuru",
+      "state": "Karnataka"
+    },
+    {
+      "name": "K J Somaiya College of Engineering",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "K L University (KLEF)",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Kakatiya University",
+      "state": "Telangana"
+    },
+    {
+      "name": "Kalinga Institute of Industrial Technology (KIIT)",
+      "state": "Odisha"
+    },
+    {
+      "name": "Kalyani Government Engineering College",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Kalyani University",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Kannur University",
+      "state": "Kerala"
+    },
+    {
+      "name": "Karunya Institute of Technology and Sciences",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Keshav Memorial Institute of Technology",
+      "state": "Telangana"
+    },
+    {
+      "name": "Khalsa College, Amritsar",
+      "state": "Punjab"
+    },
+    {
+      "name": "KIET Group of Institutions",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Kirori Mal College",
+      "state": "Delhi"
+    },
+    {
+      "name": "KLE Technological University, Hubballi",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Kumaraguru College of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Kumaun University",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "Kurukshetra University",
+      "state": "Haryana"
+    },
+    {
+      "name": "L. D. College of Engineering",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Lady Shri Ram College for Women",
+      "state": "Delhi"
+    },
+    {
+      "name": "Lakireddy Bali Reddy College of Engineering",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "LBS Institute of Technology for Women",
+      "state": "Kerala"
+    },
+    {
+      "name": "LNCT Bhopal",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Lovely Professional University",
+      "state": "Punjab"
+    },
+    {
+      "name": "Loyola College, Chennai",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "M S Ramaiah Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "M S Ramaiah University of Applied Sciences",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Madan Mohan Malaviya University of Technology",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Madhav Institute of Technology and Science, Gwalior",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Madras Christian College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Madras Institute of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Madurai Kamaraj University",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Maharaja Agrasen Institute of Technology",
+      "state": "Delhi"
+    },
+    {
+      "name": "Maharaja Sayajirao University of Baroda",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Maharshi Dayanand University, Rohtak",
+      "state": "Haryana"
+    },
+    {
+      "name": "Mahatma Gandhi University, Kottayam",
+      "state": "Kerala"
+    },
+    {
+      "name": "Mahindra University",
+      "state": "Telangana"
+    },
+    {
+      "name": "Malaviya National Institute of Technology, Jaipur",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Malaviya Regional Engineering College",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Malla Reddy College of Engineering and Technology",
+      "state": "Telangana"
+    },
+    {
+      "name": "Manav Rachna University",
+      "state": "Haryana"
+    },
+    {
+      "name": "Manipal Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Manipal University Jaipur",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Manipur University",
+      "state": "Manipur"
+    },
+    {
+      "name": "Mar Athanasius College of Engineering",
+      "state": "Kerala"
+    },
+    {
+      "name": "Marwadi University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Maturi Venkata Subba Rao Engineering College",
+      "state": "Telangana"
+    },
+    {
+      "name": "Maulana Abul Kalam Azad University of Technology",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Maulana Azad National Institute of Technology, Bhopal",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Medi-Caps University",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Meghnad Saha Institute of Technology",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Mepco Schlenk Engineering College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Miranda House",
+      "state": "Delhi"
+    },
+    {
+      "name": "MIT World Peace University",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Mithibai College",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Mizoram University",
+      "state": "Mizoram"
+    },
+    {
+      "name": "MNIT Jaipur",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Model Engineering College, Kochi",
+      "state": "Kerala"
+    },
+    {
+      "name": "Mody University of Science and Technology",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Motilal Nehru National Institute of Technology, Allahabad",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Mount Carmel College",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Muzaffarpur Institute of Technology",
+      "state": "Bihar"
+    },
+    {
+      "name": "Nagaland University",
+      "state": "Nagaland"
+    },
+    {
+      "name": "Nagpur University (RTMNU)",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Nalanda University",
+      "state": "Bihar"
+    },
+    {
+      "name": "Narsee Monjee Institute of Management Studies (NMIMS)",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Narula Institute of Technology",
+      "state": "West Bengal"
+    },
+    {
+      "name": "National Engineering College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "National Institute of Engineering, Mysuru",
+      "state": "Karnataka"
+    },
+    {
+      "name": "National Institute of Fashion Technology, Delhi",
+      "state": "Delhi"
+    },
+    {
+      "name": "National Institute of Food Technology Entrepreneurship and Management",
+      "state": "Haryana"
+    },
+    {
+      "name": "National Institute of Science Education and Research (NISER)",
+      "state": "Odisha"
+    },
+    {
+      "name": "National Institute of Technology Agartala",
+      "state": "Tripura"
+    },
+    {
+      "name": "National Institute of Technology Andhra Pradesh",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "National Institute of Technology Arunachal Pradesh",
+      "state": "Arunachal Pradesh"
+    },
+    {
+      "name": "National Institute of Technology Calicut",
+      "state": "Kerala"
+    },
+    {
+      "name": "National Institute of Technology Durgapur",
+      "state": "West Bengal"
+    },
+    {
+      "name": "National Institute of Technology Goa",
+      "state": "Goa"
+    },
+    {
+      "name": "National Institute of Technology Hamirpur",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "National Institute of Technology Jamshedpur",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "National Institute of Technology Karnataka, Surathkal",
+      "state": "Karnataka"
+    },
+    {
+      "name": "National Institute of Technology Kurukshetra",
+      "state": "Haryana"
+    },
+    {
+      "name": "National Institute of Technology Manipur",
+      "state": "Manipur"
+    },
+    {
+      "name": "National Institute of Technology Meghalaya",
+      "state": "Meghalaya"
+    },
+    {
+      "name": "National Institute of Technology Mizoram",
+      "state": "Mizoram"
+    },
+    {
+      "name": "National Institute of Technology Nagaland",
+      "state": "Nagaland"
+    },
+    {
+      "name": "National Institute of Technology Patna",
+      "state": "Bihar"
+    },
+    {
+      "name": "National Institute of Technology Raipur",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "National Institute of Technology Rourkela",
+      "state": "Odisha"
+    },
+    {
+      "name": "National Institute of Technology Sikkim",
+      "state": "Sikkim"
+    },
+    {
+      "name": "National Institute of Technology Silchar",
+      "state": "Assam"
+    },
+    {
+      "name": "National Institute of Technology Srinagar",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "National Institute of Technology Tiruchirappalli",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "National Institute of Technology Uttarakhand",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "National Institute of Technology Warangal",
+      "state": "Telangana"
+    },
+    {
+      "name": "Netaji Subhas Institute of Technology",
+      "state": "Delhi"
+    },
+    {
+      "name": "Netaji Subhas University of Technology",
+      "state": "Delhi"
+    },
+    {
+      "name": "Netaji Subhash Engineering College",
+      "state": "West Bengal"
+    },
+    {
+      "name": "New Horizon College of Engineering",
+      "state": "Karnataka"
+    },
+    {
+      "name": "NIMS University",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Nirma Institute of Technology",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Nirma University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Nitte (Deemed to be University)",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Nitte Meenakshi Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Noida Institute of Engineering and Technology",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "North Eastern Regional Institute of Science and Technology (NERIST)",
+      "state": "Arunachal Pradesh"
+    },
+    {
+      "name": "North-Eastern Hill University (NEHU)",
+      "state": "Meghalaya"
+    },
+    {
+      "name": "NSS College of Engineering, Palakkad",
+      "state": "Kerala"
+    },
+    {
+      "name": "O. P. Jindal Global University",
+      "state": "Haryana"
+    },
+    {
+      "name": "Odisha University of Technology and Research",
+      "state": "Odisha"
+    },
+    {
+      "name": "Osmania University",
+      "state": "Telangana"
+    },
+    {
+      "name": "Pachhunga University College",
+      "state": "Mizoram"
+    },
+    {
+      "name": "Padre Conceicao College of Engineering",
+      "state": "Goa"
+    },
+    {
+      "name": "Pandit Deendayal Energy University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Panjab University",
+      "state": "Chandigarh"
+    },
+    {
+      "name": "Parul University",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Patna University",
+      "state": "Bihar"
+    },
+    {
+      "name": "PES University",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Pimpri Chinchwad College of Engineering",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Pondicherry Engineering College (Puducherry Technological University)",
+      "state": "Puducherry"
+    },
+    {
+      "name": "Pondicherry University",
+      "state": "Puducherry"
+    },
+    {
+      "name": "Poornima College of Engineering",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Post Graduate Government College, Chandigarh",
+      "state": "Chandigarh"
+    },
+    {
+      "name": "Presidency College, Chennai",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Presidency University, Kolkata",
+      "state": "West Bengal"
+    },
+    {
+      "name": "PSG College of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "PSGR Krishnammal College for Women",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Pt. Ravishankar Shukla University",
+      "state": "Chhattisgarh"
+    },
+    {
+      "name": "Pune Institute of Computer Technology",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Punjab Agricultural University",
+      "state": "Punjab"
+    },
+    {
+      "name": "Punjab Engineering College",
+      "state": "Chandigarh"
+    },
+    {
+      "name": "Punjab Engineering College (Deemed to be University)",
+      "state": "Punjab"
+    },
+    {
+      "name": "Punjabi University, Patiala",
+      "state": "Punjab"
+    },
+    {
+      "name": "Quantum University",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "R V College of Engineering",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Rajagiri School of Engineering and Technology",
+      "state": "Kerala"
+    },
+    {
+      "name": "Rajalakshmi Engineering College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Rajasthan Technical University",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Rajiv Gandhi College of Engineering and Technology",
+      "state": "Puducherry"
+    },
+    {
+      "name": "Rajiv Gandhi Institute of Technology, Mumbai",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Rajiv Gandhi University of Knowledge Technologies, Nuzvid",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Rajiv Gandhi University, Itanagar",
+      "state": "Arunachal Pradesh"
+    },
+    {
+      "name": "Ramaiah College of Arts, Science and Commerce",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Ramjas College",
+      "state": "Delhi"
+    },
+    {
+      "name": "Ramnarain Ruia Autonomous College",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Ramrao Adik Institute of Technology",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Ranchi University",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Ravenshaw University",
+      "state": "Odisha"
+    },
+    {
+      "name": "Rayat Bahra University",
+      "state": "Punjab"
+    },
+    {
+      "name": "RCC Institute of Information Technology",
+      "state": "West Bengal"
+    },
+    {
+      "name": "REVA University",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Royal Global University",
+      "state": "Assam"
+    },
+    {
+      "name": "Saintgits College of Engineering",
+      "state": "Kerala"
+    },
+    {
+      "name": "Sam Higginbottom University of Agriculture, Technology and Sciences",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Samrat Ashok Technological Institute, Vidisha",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Sant Longowal Institute of Engineering and Technology",
+      "state": "Punjab"
+    },
+    {
+      "name": "Sardar Patel Institute of Technology",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Sardar Vallabhbhai National Institute of Technology, Surat",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Sarvajanik College of Engineering and Technology",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Sastra Deemed University",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Savitribai Phule Pune University",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Scottish Church College",
+      "state": "West Bengal"
+    },
+    {
+      "name": "SDM College of Engineering and Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Sharda University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Shiv Nadar University",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "Shivaji University, Kolhapur",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Shoolini University",
+      "state": "Himachal Pradesh"
+    },
+    {
+      "name": "Shri Govindram Seksaria Institute of Technology and Science (SGSITS)",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Shri Mata Vaishno Devi University",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "Shri Ram College of Commerce",
+      "state": "Delhi"
+    },
+    {
+      "name": "Shri Ramdeobaba College of Engineering and Management",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Siddaganga Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Sikkim Manipal Institute of Technology",
+      "state": "Sikkim"
+    },
+    {
+      "name": "Sikkim Manipal University",
+      "state": "Sikkim"
+    },
+    {
+      "name": "Sikkim University",
+      "state": "Sikkim"
+    },
+    {
+      "name": "Siksha 'O' Anusandhan University",
+      "state": "Odisha"
+    },
+    {
+      "name": "Silicon Institute of Technology",
+      "state": "Odisha"
+    },
+    {
+      "name": "Sinhgad College of Engineering",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Sir M Visvesvaraya Institute of Technology",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Sona College of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Sreenidhi Institute of Science and Technology",
+      "state": "Telangana"
+    },
+    {
+      "name": "Sri Jayachamarajendra College of Engineering",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Sri Krishna College of Engineering and Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Sri Manakula Vinayagar Engineering College",
+      "state": "Puducherry"
+    },
+    {
+      "name": "Sri Sivasubramaniya Nadar College of Engineering",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Sri Venkateswara College",
+      "state": "Delhi"
+    },
+    {
+      "name": "Sri Venkateswara College of Engineering, Tirupati",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Sri Venkateswara University",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "SRM Institute of Science and Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "SRM University AP",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "SRM University Delhi-NCR, Sonepat",
+      "state": "Haryana"
+    },
+    {
+      "name": "SSN College of Engineering",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "St. Anthony's College, Shillong",
+      "state": "Meghalaya"
+    },
+    {
+      "name": "St. Francis College for Women",
+      "state": "Telangana"
+    },
+    {
+      "name": "St. Joseph University, Dimapur",
+      "state": "Nagaland"
+    },
+    {
+      "name": "St. Joseph's College of Engineering",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "St. Joseph's College, Bengaluru",
+      "state": "Karnataka"
+    },
+    {
+      "name": "St. Stephen's College",
+      "state": "Delhi"
+    },
+    {
+      "name": "St. Teresa's College, Ernakulam",
+      "state": "Kerala"
+    },
+    {
+      "name": "St. Xavier's College, Kolkata",
+      "state": "West Bengal"
+    },
+    {
+      "name": "St. Xavier's College, Mumbai",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Stella Maris College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "SVKM's NMIMS Shirpur (Silvassa)",
+      "state": "Dadra and Nagar Haveli and Daman and Diu"
+    },
+    {
+      "name": "Swami Keshvanand Institute of Technology",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Symbiosis Institute of Technology",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Symbiosis International University",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Techno India University",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Tezpur University",
+      "state": "Assam"
+    },
+    {
+      "name": "Thadomal Shahani Engineering College",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Thakur College of Engineering and Technology",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Thapar Institute of Engineering and Technology",
+      "state": "Punjab"
+    },
+    {
+      "name": "The LNM Institute of Information Technology",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "The NorthCap University",
+      "state": "Haryana"
+    },
+    {
+      "name": "Thiagarajar College of Engineering",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "TKM College of Engineering",
+      "state": "Kerala"
+    },
+    {
+      "name": "Tripura Institute of Technology",
+      "state": "Tripura"
+    },
+    {
+      "name": "Tripura University",
+      "state": "Tripura"
+    },
+    {
+      "name": "Tula's Institute",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "University Institute of Engineering and Technology, Panjab University",
+      "state": "Chandigarh"
+    },
+    {
+      "name": "University of Burdwan",
+      "state": "West Bengal"
+    },
+    {
+      "name": "University of Calcutta",
+      "state": "West Bengal"
+    },
+    {
+      "name": "University of Calicut",
+      "state": "Kerala"
+    },
+    {
+      "name": "University of Delhi",
+      "state": "Delhi"
+    },
+    {
+      "name": "University of Hyderabad",
+      "state": "Telangana"
+    },
+    {
+      "name": "University of Jammu",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "University of Kashmir",
+      "state": "Jammu and Kashmir"
+    },
+    {
+      "name": "University of Kerala",
+      "state": "Kerala"
+    },
+    {
+      "name": "University of Ladakh",
+      "state": "Ladakh"
+    },
+    {
+      "name": "University of Lucknow",
+      "state": "Uttar Pradesh"
+    },
+    {
+      "name": "University of Madras",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "University of Mumbai",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "University of Mysore",
+      "state": "Karnataka"
+    },
+    {
+      "name": "University of Petroleum and Energy Studies (UPES)",
+      "state": "Uttarakhand"
+    },
+    {
+      "name": "University of Rajasthan",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "Utkal University",
+      "state": "Odisha"
+    },
+    {
+      "name": "Vardhaman College of Engineering",
+      "state": "Telangana"
+    },
+    {
+      "name": "Vasavi College of Engineering",
+      "state": "Telangana"
+    },
+    {
+      "name": "Veer Surendra Sai University of Technology (VSSUT)",
+      "state": "Odisha"
+    },
+    {
+      "name": "Veermata Jijabai Technological Institute (VJTI)",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Velammal Engineering College",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Vellore Institute of Technology",
+      "state": "Tamil Nadu"
+    },
+    {
+      "name": "Vidyavardhaka College of Engineering",
+      "state": "Karnataka"
+    },
+    {
+      "name": "Vignan's Foundation for Science, Technology and Research",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Vishnu Institute of Technology",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Vishwakarma Government Engineering College",
+      "state": "Gujarat"
+    },
+    {
+      "name": "Vishwakarma Institute of Technology, Pune",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Visva-Bharati University",
+      "state": "West Bengal"
+    },
+    {
+      "name": "Visvesvaraya National Institute of Technology, Nagpur",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Visvesvaraya Technological University",
+      "state": "Karnataka"
+    },
+    {
+      "name": "VIT Bhopal University",
+      "state": "Madhya Pradesh"
+    },
+    {
+      "name": "Vivekanand Education Society's Institute of Technology",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Vivekananda Global University",
+      "state": "Rajasthan"
+    },
+    {
+      "name": "VNR Vignana Jyothi Institute of Engineering and Technology",
+      "state": "Telangana"
+    },
+    {
+      "name": "VR Siddhartha Engineering College",
+      "state": "Andhra Pradesh"
+    },
+    {
+      "name": "Walchand College of Engineering, Sangli",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "Xavier School of Management (XLRI) Jamshedpur",
+      "state": "Jharkhand"
+    },
+    {
+      "name": "Yeshwantrao Chavan College of Engineering, Nagpur",
+      "state": "Maharashtra"
+    },
+    {
+      "name": "YMCA University of Science and Technology (J.C. Bose)",
+      "state": "Haryana"
+    }
+  ]
+}

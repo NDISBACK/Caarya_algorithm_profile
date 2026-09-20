@@ -1,0 +1,1038 @@
+{
+  "version": 4,
+  "_note": "Field definitions for the profiling wizard. Phases marked stage 'core' are the straight line a student walks to their report: details, role, business services, value constructs, ratings. Phases marked 'followup' are offered on the report afterwards - they carry the data the company-matching dashboard needs, and filling them raises the confidence attached to the scores. Moving a phase between stages is a data change, not a code change. Steps with a 'kind' other than 'fields' are handled by a dedicated renderer. 'options_from' pulls its list out of taxonomy.json.",
+  "phases": [
+    {
+      "id": "about",
+      "name": "About you",
+      "stage": "core",
+      "steps": [
+        {
+          "id": "identity",
+          "kind": "fields",
+          "title": "First, who are you?",
+          "subtitle": "The basics a company sees at the top of your profile.",
+          "fields": [
+            {
+              "id": "full_name",
+              "label": "Full name",
+              "type": "text",
+              "required": true,
+              "width": "half",
+              "maxlength": 80
+            },
+            {
+              "id": "preferred_name",
+              "label": "What should we call you?",
+              "type": "text",
+              "width": "half",
+              "maxlength": 40,
+              "optional_note": "Optional"
+            },
+            {
+              "id": "pronouns",
+              "label": "Pronouns",
+              "type": "text",
+              "width": "half",
+              "maxlength": 30,
+              "optional_note": "Optional",
+              "placeholder": "they/them, she/her, he/him…"
+            },
+            {
+              "id": "email",
+              "label": "Email",
+              "type": "email",
+              "required": true,
+              "width": "half",
+              "placeholder": "you@college.edu"
+            },
+            {
+              "id": "phone",
+              "label": "Phone",
+              "type": "tel",
+              "required": true,
+              "width": "half",
+              "placeholder": "10-digit number"
+            },
+            {
+              "id": "city",
+              "label": "Current city",
+              "type": "text",
+              "required": true,
+              "width": "half",
+              "maxlength": 60
+            },
+            {
+              "id": "state",
+              "label": "State",
+              "type": "combobox",
+              "width": "half",
+              "maxlength": 60,
+              "options_from": "institutions.states",
+              "placeholder": "Start typing your state…"
+            },
+            {
+              "id": "date_of_birth",
+              "label": "Date of birth",
+              "type": "date",
+              "width": "half",
+              "optional_note": "Optional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "name": "Your links",
+      "stage": "core",
+      "steps": [
+        {
+          "id": "portfolio",
+          "kind": "fields",
+          "title": "Where can we see your work?",
+          "subtitle": "Links do more of the convincing than anything you write. All optional — add what exists.",
+          "fields": [
+            {
+              "id": "linkedin",
+              "label": "LinkedIn",
+              "type": "url",
+              "width": "half",
+              "placeholder": "https://linkedin.com/in/…"
+            },
+            {
+              "id": "github",
+              "label": "GitHub",
+              "type": "url",
+              "width": "half",
+              "placeholder": "https://github.com/…"
+            },
+            {
+              "id": "portfolio_site",
+              "label": "Portfolio site",
+              "type": "url",
+              "width": "half",
+              "optional_note": "Optional"
+            },
+            {
+              "id": "blog",
+              "label": "Blog / writing",
+              "type": "url",
+              "width": "half",
+              "optional_note": "Optional"
+            },
+            {
+              "id": "behance",
+              "label": "Behance / Dribbble",
+              "type": "url",
+              "width": "half",
+              "optional_note": "Optional"
+            },
+            {
+              "id": "kaggle",
+              "label": "Kaggle / LeetCode / other",
+              "type": "url",
+              "width": "half",
+              "optional_note": "Optional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "stage": "core",
+      "steps": [
+        {
+          "id": "academics",
+          "kind": "fields",
+          "title": "Where are you studying?",
+          "subtitle": "",
+          "fields": [
+            {
+              "id": "college",
+              "label": "College / University",
+              "type": "combobox",
+              "required": true,
+              "width": "full",
+              "maxlength": 120,
+              "options_from": "institutions.colleges",
+              "placeholder": "Start typing your college…",
+              "help": "Not on the list? Type it in full — it's saved exactly as you write it."
+            },
+            {
+              "id": "degree",
+              "label": "Degree",
+              "type": "text",
+              "required": true,
+              "width": "half",
+              "placeholder": "B.Tech, BCA, B.Sc…",
+              "maxlength": 60
+            },
+            {
+              "id": "branch",
+              "label": "Branch / Specialisation",
+              "type": "text",
+              "width": "half",
+              "placeholder": "Computer Science",
+              "maxlength": 80
+            },
+            {
+              "id": "current_year",
+              "label": "Current year of study",
+              "type": "select",
+              "required": true,
+              "width": "half",
+              "options": [
+                "1st year",
+                "2nd year",
+                "3rd year",
+                "4th year",
+                "5th year",
+                "Graduated",
+                "Taking a break"
+              ]
+            },
+            {
+              "id": "graduation_month",
+              "label": "Graduating in",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+              ]
+            },
+            {
+              "id": "graduation_year",
+              "label": "Graduation year",
+              "type": "number",
+              "required": true,
+              "width": "half",
+              "min": 2020,
+              "max": 2035,
+              "placeholder": "2027"
+            },
+            {
+              "id": "score_type",
+              "label": "Academic score",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "CGPA (out of 10)",
+                "Percentage",
+                "I'd rather not say"
+              ]
+            },
+            {
+              "id": "score_value",
+              "label": "Score",
+              "type": "text",
+              "width": "half",
+              "maxlength": 10,
+              "placeholder": "8.2",
+              "show_if": {
+                "field": "score_type",
+                "not_in": [
+                  "I'd rather not say",
+                  ""
+                ]
+              }
+            },
+            {
+              "id": "prior_education",
+              "label": "Class 12 / Diploma",
+              "type": "text",
+              "width": "full",
+              "optional_note": "Optional",
+              "placeholder": "Board or institute, and score if you want to share it",
+              "maxlength": 140
+            },
+            {
+              "id": "active_backlogs",
+              "label": "Any active backlogs?",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "None",
+                "1–2",
+                "3 or more",
+                "I'd rather not say"
+              ],
+              "help": "Some companies ask. Being upfront here saves an awkward conversation later."
+            }
+          ]
+        },
+        {
+          "id": "languages_certs",
+          "kind": "fields",
+          "title": "Languages & certifications",
+          "subtitle": "Both are optional — add only what's real.",
+          "fields": [
+            {
+              "id": "languages",
+              "label": "Languages you speak",
+              "type": "repeater",
+              "item_label": "Language",
+              "add_label": "Add a language",
+              "max_items": 8,
+              "fields": [
+                {
+                  "id": "language",
+                  "label": "Language",
+                  "type": "text",
+                  "required": true,
+                  "width": "half",
+                  "maxlength": 40
+                },
+                {
+                  "id": "fluency",
+                  "label": "Fluency",
+                  "type": "select",
+                  "width": "half",
+                  "options": [
+                    "Native",
+                    "Fluent",
+                    "Conversational",
+                    "Basic"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "certifications",
+              "label": "Certifications & courses",
+              "type": "repeater",
+              "item_label": "Certification",
+              "add_label": "Add a certification",
+              "max_items": 10,
+              "fields": [
+                {
+                  "id": "name",
+                  "label": "Name",
+                  "type": "text",
+                  "required": true,
+                  "width": "full",
+                  "maxlength": 120
+                },
+                {
+                  "id": "issuer",
+                  "label": "Issued by",
+                  "type": "text",
+                  "width": "half",
+                  "maxlength": 80,
+                  "placeholder": "Coursera, AWS, NPTEL…"
+                },
+                {
+                  "id": "year",
+                  "label": "Year",
+                  "type": "number",
+                  "width": "half",
+                  "min": 2010,
+                  "max": 2035
+                },
+                {
+                  "id": "link",
+                  "label": "Credential link",
+                  "type": "url",
+                  "width": "full",
+                  "optional_note": "Optional"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "done",
+      "name": "What you've done",
+      "stage": "core",
+      "steps": [
+        {
+          "id": "tool_stack",
+          "kind": "tool_stack",
+          "title": "What have you actually touched?",
+          "subtitle": "Tick anything you've used in a real project or course. Quick pass — don't overthink it.",
+          "fields": []
+        },
+        {
+          "id": "work_experience",
+          "kind": "fields",
+          "title": "Work experience",
+          "subtitle": "Internships, freelance gigs, part-time work, volunteering. Having none is completely normal — skip ahead if so.",
+          "fields": [
+            {
+              "id": "work_experience",
+              "label": "",
+              "type": "repeater",
+              "item_label": "Experience",
+              "add_label": "Add an experience",
+              "max_items": 10,
+              "fields": [
+                {
+                  "id": "organisation",
+                  "label": "Organisation",
+                  "type": "text",
+                  "required": true,
+                  "width": "half",
+                  "maxlength": 100
+                },
+                {
+                  "id": "title",
+                  "label": "Your title",
+                  "type": "text",
+                  "required": true,
+                  "width": "half",
+                  "maxlength": 100
+                },
+                {
+                  "id": "engagement_type",
+                  "label": "Type",
+                  "type": "select",
+                  "width": "half",
+                  "options": [
+                    "Internship",
+                    "Part-time",
+                    "Freelance",
+                    "Full-time",
+                    "Volunteer",
+                    "Apprenticeship"
+                  ]
+                },
+                {
+                  "id": "ongoing",
+                  "label": "I'm still working here",
+                  "type": "checkbox",
+                  "width": "half"
+                },
+                {
+                  "id": "start_date",
+                  "label": "Started",
+                  "type": "month",
+                  "width": "half"
+                },
+                {
+                  "id": "end_date",
+                  "label": "Ended",
+                  "type": "month",
+                  "width": "half",
+                  "hide_if": {
+                    "field": "ongoing",
+                    "equals": true
+                  }
+                },
+                {
+                  "id": "description",
+                  "label": "What did you actually do?",
+                  "type": "textarea",
+                  "width": "full",
+                  "maxlength": 400,
+                  "rows": 3,
+                  "placeholder": "The specific thing you owned, not the team's job description."
+                },
+                {
+                  "id": "tech",
+                  "label": "Tech / tools used",
+                  "type": "tags",
+                  "width": "full",
+                  "placeholder": "Type and press Enter"
+                },
+                {
+                  "id": "link",
+                  "label": "Link",
+                  "type": "url",
+                  "width": "full",
+                  "optional_note": "Optional"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projects",
+          "kind": "fields",
+          "title": "Projects & proof of work",
+          "subtitle": "The things you've built. A half-finished project you can talk about beats a polished one you can't.",
+          "fields": [
+            {
+              "id": "projects",
+              "label": "",
+              "type": "repeater",
+              "item_label": "Project",
+              "add_label": "Add a project",
+              "max_items": 10,
+              "fields": [
+                {
+                  "id": "title",
+                  "label": "Project title",
+                  "type": "text",
+                  "required": true,
+                  "width": "half",
+                  "maxlength": 100
+                },
+                {
+                  "id": "status",
+                  "label": "Status",
+                  "type": "select",
+                  "width": "half",
+                  "options": [
+                    "Live / shipped",
+                    "Complete but not deployed",
+                    "Work in progress",
+                    "Abandoned but learned a lot"
+                  ]
+                },
+                {
+                  "id": "description",
+                  "label": "What is it?",
+                  "type": "textarea",
+                  "required": true,
+                  "width": "full",
+                  "maxlength": 300,
+                  "rows": 2,
+                  "placeholder": "One or two lines. What problem does it solve?"
+                },
+                {
+                  "id": "your_role",
+                  "label": "What did you build in it?",
+                  "type": "text",
+                  "width": "half",
+                  "maxlength": 120
+                },
+                {
+                  "id": "team",
+                  "label": "Solo or team?",
+                  "type": "select",
+                  "width": "half",
+                  "options": [
+                    "Solo",
+                    "Team of 2–3",
+                    "Team of 4+"
+                  ]
+                },
+                {
+                  "id": "tech",
+                  "label": "Tech used",
+                  "type": "tags",
+                  "width": "full",
+                  "placeholder": "Type and press Enter"
+                },
+                {
+                  "id": "link",
+                  "label": "Repo or live link",
+                  "type": "url",
+                  "width": "full"
+                }
+              ]
+            },
+            {
+              "id": "competitions",
+              "label": "Hackathons, competitions & open source",
+              "type": "repeater",
+              "item_label": "Entry",
+              "add_label": "Add an entry",
+              "max_items": 8,
+              "fields": [
+                {
+                  "id": "name",
+                  "label": "Name",
+                  "type": "text",
+                  "required": true,
+                  "width": "half",
+                  "maxlength": 100
+                },
+                {
+                  "id": "kind",
+                  "label": "Type",
+                  "type": "select",
+                  "width": "half",
+                  "options": [
+                    "Hackathon",
+                    "Competition",
+                    "Open-source contribution",
+                    "Research",
+                    "Other"
+                  ]
+                },
+                {
+                  "id": "outcome",
+                  "label": "What happened?",
+                  "type": "text",
+                  "width": "half",
+                  "maxlength": 120,
+                  "placeholder": "Finalist, merged PR, 2nd place…"
+                },
+                {
+                  "id": "year",
+                  "label": "Year",
+                  "type": "number",
+                  "width": "half",
+                  "min": 2015,
+                  "max": 2035
+                },
+                {
+                  "id": "link",
+                  "label": "Link",
+                  "type": "url",
+                  "width": "full",
+                  "optional_note": "Optional"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "leadership",
+          "kind": "fields",
+          "title": "Leadership & activities",
+          "subtitle": "Clubs, teaching, events, community work. This is where most of your transferable skills were actually built.",
+          "fields": [
+            {
+              "id": "leadership",
+              "label": "",
+              "type": "repeater",
+              "item_label": "Activity",
+              "add_label": "Add an activity",
+              "max_items": 8,
+              "fields": [
+                {
+                  "id": "organisation",
+                  "label": "Club / society / community",
+                  "type": "text",
+                  "required": true,
+                  "width": "half",
+                  "maxlength": 100
+                },
+                {
+                  "id": "role",
+                  "label": "Your role",
+                  "type": "text",
+                  "width": "half",
+                  "maxlength": 80,
+                  "placeholder": "Core member, lead, mentor…"
+                },
+                {
+                  "id": "period",
+                  "label": "When",
+                  "type": "text",
+                  "width": "half",
+                  "maxlength": 60,
+                  "placeholder": "2024 – present"
+                },
+                {
+                  "id": "people_involved",
+                  "label": "People you worked with or led",
+                  "type": "select",
+                  "width": "half",
+                  "options": [
+                    "Just me",
+                    "2–5",
+                    "6–15",
+                    "16–50",
+                    "50+"
+                  ]
+                },
+                {
+                  "id": "description",
+                  "label": "What did you do?",
+                  "type": "textarea",
+                  "width": "full",
+                  "maxlength": 300,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "want",
+      "name": "What you want",
+      "stage": "core",
+      "steps": [
+        {
+          "id": "role",
+          "kind": "role",
+          "title": "What do you want to get paid for?",
+          "subtitle": "Pick the kind of work you want to be hired to do. Not what you're best at yet — what you're aiming at.",
+          "fields": []
+        },
+        {
+          "id": "business_services",
+          "kind": "business_services",
+          "title": "What would you like to do within this?",
+          "subtitle": "Choose 1 to 3 areas. These are the concrete things companies hire this role to deliver.",
+          "min": 1,
+          "max": 3,
+          "fields": []
+        },
+        {
+          "id": "value_constructs",
+          "kind": "value_constructs",
+          "title": "Which of these do you want to own?",
+          "subtitle": "Pick at least 3. Each one is a real piece of work you'd be handed on day one.",
+          "min": 3,
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "good_at",
+      "name": "Rate yourself",
+      "stage": "core",
+      "steps": [
+        {
+          "id": "ratings",
+          "kind": "ratings",
+          "title": "Now rate yourself",
+          "subtitle": "These are the exact skills behind the work you picked. Rate honestly — the report is only as useful as this is truthful. After these we ask a few more, and which ones depends on your answers.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "availability",
+      "name": "Availability & location",
+      "stage": "followup",
+      "blurb": "When you can work, where, and on what terms. A company can't match you without this.",
+      "steps": [
+        {
+          "id": "engagement",
+          "kind": "fields",
+          "title": "Availability",
+          "subtitle": "Be honest about hours. Overcommitting is the most common reason these placements fall apart.",
+          "fields": [
+            {
+              "id": "engagement_types",
+              "label": "What are you open to?",
+              "type": "multiselect",
+              "min": 1,
+              "width": "full",
+              "options": [
+                "Internship",
+                "Part-time role",
+                "Full-time role",
+                "Project-based work",
+                "Apprenticeship",
+                "Freelance"
+              ]
+            },
+            {
+              "id": "hours_per_week",
+              "label": "Hours per week you can genuinely commit",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "Under 10",
+                "10–15",
+                "15–20",
+                "20–30",
+                "30–40",
+                "40+"
+              ]
+            },
+            {
+              "id": "earliest_start",
+              "label": "Earliest you can start",
+              "type": "date",
+              "width": "half"
+            },
+            {
+              "id": "commitment_duration",
+              "label": "How long can you commit for?",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "Under 1 month",
+                "1–3 months",
+                "3–6 months",
+                "6–12 months",
+                "Over a year",
+                "Open-ended"
+              ]
+            },
+            {
+              "id": "notice_period",
+              "label": "Notice needed before you can start",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "None — immediately",
+                "Under 2 weeks",
+                "2–4 weeks",
+                "Over a month"
+              ]
+            },
+            {
+              "id": "unavailable_periods",
+              "label": "Periods you'll be unavailable",
+              "type": "text",
+              "width": "full",
+              "maxlength": 160,
+              "placeholder": "Exams in May, semester break in December…",
+              "help": "Companies plan around this rather than being surprised by it."
+            }
+          ]
+        },
+        {
+          "id": "location_comp",
+          "kind": "fields",
+          "title": "Location & compensation",
+          "subtitle": "",
+          "fields": [
+            {
+              "id": "work_mode",
+              "label": "How do you want to work?",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "Remote only",
+                "Hybrid",
+                "Onsite",
+                "No preference"
+              ]
+            },
+            {
+              "id": "relocate",
+              "label": "Willing to relocate?",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "Yes, anywhere",
+                "Yes, within my state",
+                "Only for the right role",
+                "No"
+              ]
+            },
+            {
+              "id": "preferred_locations",
+              "label": "Preferred work locations",
+              "type": "tags",
+              "width": "full",
+              "placeholder": "Bengaluru, Pune… press Enter after each"
+            },
+            {
+              "id": "stipend_expectation",
+              "label": "Stipend / salary expectation",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "Unpaid is fine if the learning is real",
+                "Under ₹10k/month",
+                "₹10k–20k/month",
+                "₹20k–40k/month",
+                "₹40k+/month",
+                "Open to discuss"
+              ]
+            },
+            {
+              "id": "stipend_notes",
+              "label": "Anything to add on compensation?",
+              "type": "text",
+              "width": "half",
+              "maxlength": 140,
+              "optional_note": "Optional"
+            },
+            {
+              "id": "work_authorisation",
+              "label": "Work authorisation notes",
+              "type": "text",
+              "width": "full",
+              "maxlength": 140,
+              "optional_note": "Optional",
+              "placeholder": "Visa status, work permit, anything a company should know"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fit",
+      "name": "Fit & motivation",
+      "stage": "followup",
+      "blurb": "Where you want your work to land, how you like to work, and why any of this in your own words.",
+      "steps": [
+        {
+          "id": "world",
+          "kind": "fields",
+          "title": "Where do you want your work to land?",
+          "subtitle": "The same skills feel completely different depending on what they're pointed at.",
+          "fields": [
+            {
+              "id": "industries",
+              "label": "Industries you're drawn to",
+              "type": "multiselect",
+              "min": 1,
+              "max": 5,
+              "width": "full",
+              "options_from": "taxonomy.industries"
+            },
+            {
+              "id": "causes",
+              "label": "Causes that matter to you",
+              "type": "multiselect",
+              "min": 0,
+              "max": 5,
+              "width": "full",
+              "options_from": "taxonomy.causes"
+            },
+            {
+              "id": "company_stage",
+              "label": "What kind of organisation?",
+              "type": "multiselect",
+              "min": 0,
+              "width": "full",
+              "options": [
+                "Early-stage startup (under 20 people)",
+                "Growing startup (20–100)",
+                "Scaleup (100–500)",
+                "Large company (500+)",
+                "NGO / non-profit",
+                "Agency / studio",
+                "Government or public sector",
+                "No preference"
+              ]
+            },
+            {
+              "id": "team_size",
+              "label": "Team size you'd thrive in",
+              "type": "select",
+              "width": "half",
+              "options": [
+                "Just me and a mentor",
+                "Small team (3–6)",
+                "Mid-sized team (7–15)",
+                "Large team (15+)",
+                "No preference"
+              ]
+            },
+            {
+              "id": "avoid",
+              "label": "Anything you'd rather not work on?",
+              "type": "text",
+              "width": "full",
+              "maxlength": 160,
+              "optional_note": "Optional",
+              "placeholder": "Industries, products or types of work you want to stay away from"
+            }
+          ]
+        },
+        {
+          "id": "work_style",
+          "kind": "fields",
+          "title": "How you like to work",
+          "subtitle": "There's no right answer and nothing here is scored. It's used to put you somewhere you'll actually enjoy.",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Direction",
+              "type": "slider_pair",
+              "width": "full",
+              "poles": [
+                "Give me clear structure and steps",
+                "Give me the goal, I'll find the way"
+              ]
+            },
+            {
+              "id": "collaboration",
+              "label": "Collaboration",
+              "type": "slider_pair",
+              "width": "full",
+              "poles": [
+                "Long stretches of solo focus",
+                "Constantly working alongside people"
+              ]
+            },
+            {
+              "id": "pace",
+              "label": "Pace",
+              "type": "slider_pair",
+              "width": "full",
+              "poles": [
+                "Steady and predictable",
+                "Intense sprints with quiet gaps"
+              ]
+            },
+            {
+              "id": "variety",
+              "label": "Focus",
+              "type": "slider_pair",
+              "width": "full",
+              "poles": [
+                "One deep problem at a time",
+                "Many varied things at once"
+              ]
+            },
+            {
+              "id": "feedback",
+              "label": "Feedback",
+              "type": "slider_pair",
+              "width": "full",
+              "poles": [
+                "Direct and blunt",
+                "Gentle and framed"
+              ]
+            },
+            {
+              "id": "learning",
+              "label": "Learning",
+              "type": "slider_pair",
+              "width": "full",
+              "poles": [
+                "Read and understand first",
+                "Break it and find out"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "motivation",
+          "kind": "fields",
+          "title": "In your own words",
+          "subtitle": "Short answers are fine. This is the part a company reads before anything else.",
+          "fields": [
+            {
+              "id": "why_this_role",
+              "label": "Why this kind of work?",
+              "type": "textarea",
+              "width": "full",
+              "maxlength": 300,
+              "rows": 3,
+              "placeholder": "What pulled you towards it?"
+            },
+            {
+              "id": "what_to_learn",
+              "label": "What do you most want to learn in the next 6 months?",
+              "type": "textarea",
+              "width": "full",
+              "maxlength": 300,
+              "rows": 3
+            },
+            {
+              "id": "proudest_work",
+              "label": "What's the thing you've built or done that you're proudest of?",
+              "type": "textarea",
+              "width": "full",
+              "maxlength": 300,
+              "rows": 3,
+              "placeholder": "It doesn't have to be technical."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
