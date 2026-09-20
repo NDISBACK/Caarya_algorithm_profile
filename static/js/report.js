@@ -846,7 +846,6 @@
             ? el('a', { class: 'btn btn-ghost no-print', href: window.CAARYA_BACK_LINK, text: '← All students' })
             : null,
           lock ? null : toggle,
-          el('button', { class: 'btn btn-ghost no-print', text: 'Print', onclick: () => window.print() }),
         ]),
       ]));
       (view === 'company' ? companyView(profile) : studentView(profile, ctx)).forEach((node) => container.append(node));
