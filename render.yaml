@@ -1,8 +1,11 @@
+# Free-plan config: no persistent disk, so the SQLite DB and taxonomy edits reset
+# on every redeploy/restart. For durable data, use plan: starter and add a disk
+# (mountPath /var/data) plus the CAARYA_DATA_DIR=/var/data env var.
 services:
   - type: web
     name: caarya
     runtime: python
-    plan: starter            # persistent disks need a paid instance
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 1 --timeout 60
     healthCheckPath: /api/health
@@ -11,9 +14,3 @@ services:
         value: 3.12.3
       - key: CAARYA_RELOAD
         value: "0"
-      - key: CAARYA_DATA_DIR
-        value: /var/data
-    disk:
-      name: caarya-data
-      mountPath: /var/data
-      sizeGB: 1
