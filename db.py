@@ -10,11 +10,15 @@ from the admin portal.
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = Path(__file__).resolve().parent / "caarya.db"
+# CAARYA_DATA_DIR moves all mutable state (this DB, data/*.json, backups) onto a
+# volume - needed wherever the code directory is read-only or thrown away on deploy.
+STORAGE_DIR = Path(os.environ["CAARYA_DATA_DIR"]) if os.environ.get("CAARYA_DATA_DIR") else None
+DB_PATH = (STORAGE_DIR or Path(__file__).resolve().parent) / "caarya.db"
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS students (

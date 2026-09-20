@@ -10,13 +10,33 @@ wrong score), and picks the cross-path skill battery.
 from __future__ import annotations
 
 import json
+import os
+import shutil
 from collections import Counter
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent / "data"
+BUNDLED_DATA_DIR = Path(__file__).resolve().parent / "data"
+# With CAARYA_DATA_DIR set, editable data lives on that volume instead of next to the code.
+DATA_DIR = Path(os.environ["CAARYA_DATA_DIR"]) / "data" if os.environ.get("CAARYA_DATA_DIR") else BUNDLED_DATA_DIR
 TAXONOMY_PATH = DATA_DIR / "taxonomy.json"
 SCHEMA_PATH = DATA_DIR / "profile_schema.json"
 INSTITUTIONS_PATH = DATA_DIR / "institutions.json"
+
+
+
+def bootstrap_data_dir() -> None:
+    """Copy the bundled taxonomy/schema/institutions into DATA_DIR on first boot.
+
+    Never overwrites: once an admin has edited the taxonomy on the volume, that copy wins.
+    """
+    if DATA_DIR == BUNDLED_DATA_DIR:
+        return
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    for name in ("taxonomy.json", "profile_schema.json", "institutions.json"):
+        target = DATA_DIR / name
+        if not target.exists():
+            shutil.copy2(BUNDLED_DATA_DIR / name, target)
+
 
 MIN_SIMILARITY = 0.05  # below this, two skills share too little to infer anything
 

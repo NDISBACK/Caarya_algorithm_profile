@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+caarya.db
+data/backups/
+.vercel
+.pytest_cache/

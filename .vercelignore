@@ -1,0 +1,6 @@
+.git
+tests
+caarya.db
+data/backups
+__pycache__
+.venv
