@@ -11,12 +11,16 @@ They share the data on disk - `data/taxonomy.json` and `caarya.db` - so an edit
 here is live for the next student who loads the form. That means both programs
 need to run on the same machine, or at least the same volume.
 
-    ⚠ There is no authentication yet. `_authenticate` below is the one hook
-      where it goes; everything already routes through it.
+Access is gated by HTTP Basic auth (`_authenticate` below, the one hook every
+admin route passes through). Set CAARYA_ADMIN_USER (default "admin") and
+CAARYA_ADMIN_PASSWORD. Served through wsgi.py with no password set, the admin
+refuses every request rather than running open; only the local
+`python3 admin_app.py` runs without one.
 """
 
 from __future__ import annotations
 
+import hmac
 import os
 import socket
 import traceback
@@ -36,15 +40,39 @@ app = Flask(__name__, static_folder="static", static_url_path="/static")
 app.register_blueprint(admin_blueprint)
 
 
+def _challenge(message: str):
+    response = jsonify({"error": message})
+    response.status_code = 401
+    response.headers["WWW-Authenticate"] = 'Basic realm="Caarya admin", charset="UTF-8"'
+    return response
+
+
+def _same(given: str, expected: str) -> bool:
+    return hmac.compare_digest(given.encode("utf-8"), expected.encode("utf-8"))
+
+
 @app.before_request
 def _authenticate():
-    """The single gate every admin request passes through.
+    """The single gate every admin request passes through (HTTP Basic auth).
 
-    Open on purpose for now. To close it, return a 401/redirect from here when
-    the request isn't signed in - nothing else needs to change, because every
-    route in this program goes through this hook and the student app has no
-    admin routes to protect in the first place.
+    Basic auth means the browser handles the login prompt and re-sends the
+    credentials on the admin page's own fetch calls, so no login page or
+    frontend change is needed. Both fields are always compared, so a wrong user
+    and a wrong password take the same time to reject.
     """
+    password = os.environ.get("CAARYA_ADMIN_PASSWORD", "")
+    if not password:
+        if os.environ.get("CAARYA_ADMIN_REQUIRE_AUTH") == "1":   # set by wsgi.py
+            return jsonify({"error": "Admin is disabled: set CAARYA_ADMIN_PASSWORD."}), 503
+        return None                                               # local dev only
+
+    given = request.authorization
+    if given is None or given.type != "basic":
+        return _challenge("Sign in to use the admin.")
+    user_ok = _same(given.username or "", os.environ.get("CAARYA_ADMIN_USER", "admin"))
+    pass_ok = _same(given.password or "", password)
+    if not (user_ok and pass_ok):
+        return _challenge("Wrong username or password.")
     return None
 
 
@@ -113,6 +141,6 @@ if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":
         student = os.environ.get("CAARYA_STUDENT_URL", "http://localhost:5000")
         print(f"  Caarya admin · taxonomy v{tax.version}\n"
-              f"  http://127.0.0.1:{PORT}   (no authentication — don't expose this port)\n"
+              f"  http://127.0.0.1:{PORT}   ({'password required' if os.environ.get('CAARYA_ADMIN_PASSWORD') else 'NO PASSWORD SET - set CAARYA_ADMIN_PASSWORD, and do not expose this port'})\n"
               f"  student app expected at {student}\n")
     app.run(host="127.0.0.1", port=PORT, debug=True)

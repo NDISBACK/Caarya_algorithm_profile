@@ -207,3 +207,54 @@ def test_usage_counts_find_what_a_student_referenced(tmp_path):
     assert counts["services"]["api-development"] == 1
     assert counts["vcs"]["vc-design-rest-apis"] == 1
     assert counts["skills"]["sql"] == 1
+
+
+# ------------------------------------------------------------------- auth
+
+
+@pytest.fixture()
+def admin_client(monkeypatch):
+    import admin_app
+    monkeypatch.setenv("CAARYA_ADMIN_USER", "boss")
+    monkeypatch.setenv("CAARYA_ADMIN_PASSWORD", "s3cret-pass")
+    monkeypatch.delenv("CAARYA_ADMIN_REQUIRE_AUTH", raising=False)
+    return admin_app.app.test_client()
+
+
+def _basic(user, password):
+    import base64
+    return {"Authorization": "Basic " + base64.b64encode(f"{user}:{password}".encode()).decode()}
+
+
+@pytest.mark.parametrize("path", ["/", "/api/profiles", "/api/admin/taxonomy", "/students/1"])
+def test_admin_requires_credentials(admin_client, path):
+    response = admin_client.get(path)
+    assert response.status_code == 401
+    assert response.headers["WWW-Authenticate"].startswith("Basic")
+
+
+def test_admin_rejects_wrong_credentials(admin_client):
+    assert admin_client.get("/api/profiles", headers=_basic("boss", "nope")).status_code == 401
+    assert admin_client.get("/api/profiles", headers=_basic("intruder", "s3cret-pass")).status_code == 401
+
+
+def test_admin_accepts_correct_credentials(admin_client):
+    assert admin_client.get("/api/profiles", headers=_basic("boss", "s3cret-pass")).status_code == 200
+
+
+def test_admin_writes_are_gated_too(admin_client):
+    assert admin_client.post("/api/admin/roles", json={"name": "x"}).status_code == 401
+
+
+def test_admin_is_disabled_when_deployed_without_a_password(monkeypatch):
+    import admin_app
+    monkeypatch.delenv("CAARYA_ADMIN_PASSWORD", raising=False)
+    monkeypatch.setenv("CAARYA_ADMIN_REQUIRE_AUTH", "1")
+    assert admin_app.app.test_client().get("/api/profiles").status_code == 503
+
+
+def test_student_app_needs_no_credentials(admin_client):
+    import app as student
+    client = student.app.test_client()
+    assert client.get("/api/health").status_code == 200
+    assert client.get("/").status_code == 200

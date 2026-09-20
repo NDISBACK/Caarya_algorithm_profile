@@ -17,6 +17,7 @@ import os
 # instance (load_taxonomy re-reads at most every few seconds); files never change, so 0 otherwise.
 os.environ.setdefault("CAARYA_RELOAD", "1" if os.environ.get("DATABASE_URL") else "0")
 os.environ.setdefault("CAARYA_STUDENT_URL", "/")
+os.environ["CAARYA_ADMIN_REQUIRE_AUTH"] = "1"   # deployed: no password means no admin, never an open one
 if os.environ.get("VERCEL") and not os.environ.get("DATABASE_URL"):
     # Vercel's filesystem is read-only apart from /tmp, and /tmp is not shared or durable.
     os.environ.setdefault("CAARYA_DATA_DIR", "/tmp/caarya")

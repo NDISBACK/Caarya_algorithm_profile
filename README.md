@@ -25,9 +25,9 @@ firewalled independently. They read and write the same `data/taxonomy.json` and
 `caarya.db`, which means they need the same machine or the same volume; an edit
 in the admin is live for the next student who loads the form.
 
-> **The admin has no authentication yet.** Don't expose its port. When you add a
-> login it goes in `admin_app.py::_authenticate`, the single hook every admin
-> request already passes through.
+> **The admin is behind HTTP Basic auth.** Set `CAARYA_ADMIN_USER` (default `admin`) and
+> `CAARYA_ADMIN_PASSWORD`. Deployed through `wsgi.py`, it refuses all requests until a password
+> is set; the local `python3 admin_app.py` runs open if none is set.
 
 If it refuses to start, something else is already on the port — most often an
 older copy of this server, which would otherwise keep answering your browser with
@@ -207,11 +207,9 @@ Note the admin deliberately uses the model's own vocabulary — Roles, Business
 Services, Value Constructs — while the student form translates them into plain
 English. Two audiences, two vocabularies.
 
-> **Access:** the admin routes only answer requests from the machine running the
-> server, and refuse anything arriving through a proxy. That is the whole of the
-> protection — enough for local work and **not enough to deploy**. Real
-> authentication belongs in `admin.py::_local_only`, which exists so there is one
-> obvious place to put it.
+> **Access:** every admin route is behind HTTP Basic auth (`admin_app.py::_authenticate`)
+> with one shared username and password from the environment. There are no per-user
+> accounts or roles yet.
 
 ## Changing the content
 
